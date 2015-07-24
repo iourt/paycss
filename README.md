@@ -65,12 +65,20 @@ cnpm install (对应npm就是  npm install)
 
 将会为你构建初始化的项目需要资源
 
-3、编译好的CSS嵌入JS项目中
+3、编译好的CSS迁入JS项目中
 
 比如要把 plugins/login 的CSS等迁入到对应的 JS 项目中，那就DOS输入
 
 - $ gulp build -f  plugins/login
 
 这时会把编译好的CSS，images, fonts 等等资源复制到 JS 对应的项目中
+
+4、CSS 冗余查询
+
+- $ gulp check:css -f {项目地址}
+
+5、images 冗余查询
+
+- $ gulp check:images -f {项目地址}
 
 
