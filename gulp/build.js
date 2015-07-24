@@ -2,6 +2,8 @@ var fs   = require('fs'),
     argv = require('yargs').argv,
     os   = require('os');
 
+var reporter = require('gulp-less-reporter');
+
 var $folder = argv.f || "",
     veros   = os.platform();
 
@@ -19,19 +21,28 @@ module.exports = function (gulp, $) {
 
     // less编译成CSS
     gulp.task('less', function () {
-        return gulp.src([
+        var files = [
                 './mockup/**/all.less',
                 '!./mockup/package/all.less'
-            ])
+            ],
+            dest = './mockup/';
+
+        if ($folder) {
+            files = './mockup/'+ $folder +'/source/all.less';
+            dest = './mockup/'+ $folder +'/source/';
+        };
+
+        return gulp.src(files)
             .pipe($.plumber())
             .pipe($.less())
+            .on('error', $.lessReporter)
             .pipe($.autoprefixer({
                 browsers: ['last 2 versions']
             }))
             .pipe($.size({
                 title: 'css--------------------------------'
             }))
-            .pipe(gulp.dest('./mockup/'));
+            .pipe(gulp.dest(dest));
     });
 
 
@@ -101,6 +112,29 @@ module.exports = function (gulp, $) {
                 ])
                 .pipe(gulp.dest('../'));
         }
+    });
+
+
+    gulp.task('images:filter', function () {
+        return gulp.src([
+                    './mockup/'+ $folder +'/source/images/**/*',
+                    './mockup/'+ $folder +'/source/all.css',
+                    './mockup/'+ $folder +'/html/**/*.html'
+                ])
+                .pipe($.plumber())
+                .pipe($.unusedImages())
+                .pipe($.plumber.stop());
+    });
+
+
+    gulp.task('css:filter', function () {
+        return gulp.src([
+                    './mockup/'+ $folder +'/source/all.css',
+                    './mockup/'+ $folder +'/html/**/*.html'
+                ])
+                .pipe($.plumber())
+                .pipe($.checkUnusedCss())
+                .pipe($.plumber.stop());
     });
 
 };
