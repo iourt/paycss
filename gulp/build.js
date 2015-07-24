@@ -2,7 +2,7 @@ var fs   = require('fs'),
     argv = require('yargs').argv,
     os   = require('os');
 
-var $folder = argv.f,
+var $folder = argv.f || "",
     veros   = os.platform();
 
 module.exports = function (gulp, $) {
@@ -10,8 +10,8 @@ module.exports = function (gulp, $) {
     // 初始化基础资源
     gulp.task('folder', function () {
         return gulp.src([
-                './mockup/common/**/*',
-                '!./mockup/common/less/**/*'
+                './mockup/package/**/*',
+                '!./mockup/package/less/**/*'
             ])
             .pipe(gulp.dest('./mockup/'+ $folder +'/source'));
     });
@@ -21,7 +21,7 @@ module.exports = function (gulp, $) {
     gulp.task('less', function () {
         return gulp.src([
                 './mockup/**/all.less',
-                '!./mockup/common/all.less'
+                '!./mockup/package/all.less'
             ])
             .pipe($.plumber())
             .pipe($.less())
@@ -65,18 +65,42 @@ module.exports = function (gulp, $) {
 
         gulp.src([
                 './mockup/**/*.less',
-                '!./mockup/common/all.less'
+                '!./mockup/package/all.less'
             ])
             .pipe($.plumber())
             .pipe($.watch([
                     './mockup/**/*.less',
-                    '!./mockup/common/all.less'
+                    '!./mockup/package/all.less'
                 ], function() {
                     gulp.start('less');
                 })
             )
             .pipe($.livereload());
+    });
 
+
+    gulp.task('move', function () {
+        if ($folder) {
+            gulp.src([
+                    '!./mockup/**/html/',
+                    '!./mockup/**/less/',
+                    './mockup/'+ $folder +'/source/**/*',
+                    '!./mockup/'+ $folder +'/source/**/*.less',
+                    '!./mockup/'+ $folder +'/source/**/*.html'
+                ])
+                .pipe(gulp.dest('../'+ $folder +'/source'));
+        } else {
+            gulp.src([
+                    '!./mockup/package/',
+                    '!./mockup/**/html/',
+                    '!./mockup/**/less/',
+                    './mockup/**/*',
+                    '!./mockup/package/**/*',
+                    '!./mockup/**/*.less',
+                    '!./mockup/**/*.html'
+                ])
+                .pipe(gulp.dest('../'));
+        }
     });
 
 };

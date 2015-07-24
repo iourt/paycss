@@ -12,4 +12,8 @@ module.exports = function (gulp, $) {
 
     gulp.task('run', ['less', 'connect', 'watch']);
 
+    gulp.task('build', ['less'], function () {
+        gulp.start('move');
+    });
+
 };
