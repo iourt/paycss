@@ -39,27 +39,27 @@ cnpm install --g gulp
 
 到这里我们主要依赖的三大环境已经准备就署，但不要急，能运行起less的还差最后一步呢，请往下看
 
-四、less编译
+####四、less编译
 
 打开cmd 切换到 svn paycss 目录，运行命令
 cnpm install (对应npm就是  npm install)
 
 敲完命令后需要等待一段时间.....
 
-五、运行
+####五、运行
 第四步做好后就得运行环境写HTML,LESS了
 
 1、如果需要运行环境，直接DOS下敲入
-$ gulp
+- $ gulp
 
 2、对应文件夹的建立
 比如要创建 plugins/login 项目，那就DOS输入
-$ gulp init -f plugins/login
+- $ gulp init -f plugins/login
 将会为你构建初始化的项目需要资源
 
 3、编译好的CSS嵌入JS项目中
 比如要把 plugins/login 的CSS等迁入到对应的 JS 项目中，那就DOS输入
-$ gulp build -f  plugins/login
+- $ gulp build -f  plugins/login
 这时会把编译好的CSS，images, fonts 等等资源复制到 JS 对应的项目中
 
 
