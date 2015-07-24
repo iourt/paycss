@@ -26,19 +26,40 @@ node cli.js install npm -gf
 可以在dos下用 npm -v 命令测试。
 
 
-PS: 由于我大天朝的墙，可能你用npm安装其他模块的时候会经常安装不了，这里就得用上 淘宝的 NPM 镜像了（好东西，感谢ing....）
-cnpm 安装很简单在你的doc中键入下面的命令：
+PS: 由于我大天朝的墙，可能你用npm安装其他模块的时候会经常安装不了，这里就得用上 淘宝的 NPM 镜像了（感谢ing....）
+cnpm 安装很简单在你的dos中键入下面的命令：
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 等待完成......
 后面就可以像使用npm一样来使用cnpm了，cnpm支持所有的npm命令
 
 三、Windows 下 gulp 安装（这里就用CNPM来安装模块了）
 
-在你的doc里敲入：
+在你的dos里敲入：
 cnpm install --g gulp 
 
-到这里我们主要依赖的三大环境已经一切就署，但不要急，能运行起less的还差最后一步呢，请往下看
+到这里我们主要依赖的三大环境已经准备就署，但不要急，能运行起less的还差最后一步呢，请往下看
 
 四、less编译
+
 打开cmd 切换到 svn paycss 目录，运行命令
 cnpm install (对应npm就是  npm install)
+
+敲完命令后需要等待一段时间.....
+
+五、运行
+第四步做好后就得运行环境写HTML,LESS了
+
+1、如果需要运行环境，直接DOS下敲入
+$ gulp
+
+2、对应文件夹的建立
+比如要创建 plugins/login 项目，那就DOS输入
+$ gulp init -f plugins/login
+将会为你构建初始化的项目需要资源
+
+3、编译好的CSS嵌入JS项目中
+比如要把 plugins/login 的CSS等迁入到对应的 JS 项目中，那就DOS输入
+$ gulp build -f  plugins/login
+这时会把编译好的CSS，images, fonts 等等资源复制到 JS 对应的项目中
+
+
