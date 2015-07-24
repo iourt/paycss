@@ -2,7 +2,14 @@
 
 @common-less: "./mockup/common/less/";
 
-@import "@{common-less}variables.less";
-@import "@{common-less}reset.less";
-@import "@{common-less}border.less";
-@import "@{common-less}btn.less";
+/**
+ * 基础样式表
+ * mockup/common/less
+ */
+@import "@{common-less}variables.less"; //--定义一些基础变量
+@import "@{common-less}font.less"; //--定义一些基础变量
+@import "@{common-less}reset.less"; //------重置样式
+@import "@{common-less}widget.less"; //-----一些小的组件
+@import "@{common-less}icon.less"; //-------图标样式
+@import "@{common-less}border.less"; //-----边框样式（半像素边框）
+@import "@{common-less}btn.less"; //--------按钮样式

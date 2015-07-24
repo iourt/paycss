@@ -1,0 +1,12 @@
+﻿.icon(@font) {
+    &:after {
+        display: block;
+        content: @font;
+        .font-size();
+    }
+}
+
+
+.icon_back {
+    .icon(123f);
+}
