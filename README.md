@@ -3,7 +3,7 @@
 ### 模块依赖
 nodejs、npm、gulp
 
-一、Windows 下 nodejs 安装（两种安装方法，可以选择第二种）
+####一、Windows 下 nodejs 安装（两种安装方法，可以选择第二种）
 
 1.在http://nodejs.org/download/处下载对应的msi文件，点击安装，一路到底，结束；
 
@@ -12,7 +12,7 @@ nodejs、npm、gulp
 可以在dos下用 node -v 命令测试。
 
 
-二、Windows 下 npm 安装
+####二、Windows 下 npm 安装
 
 1.在https://github.com/isaacs/npm/tags处获取NPM的源码，如果已经安装过Git的，也可以通过git下载：
 
@@ -32,7 +32,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 等待完成......
 后面就可以像使用npm一样来使用cnpm了，cnpm支持所有的npm命令
 
-三、Windows 下 gulp 安装（这里就用CNPM来安装模块了）
+####三、Windows 下 gulp 安装（这里就用CNPM来安装模块了）
 
 在你的dos里敲入：
 cnpm install --g gulp 
