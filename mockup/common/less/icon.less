@@ -1,12 +1,16 @@
-﻿.icon(@font) {
+﻿.icon(@font; @size: 14; @weight: normal; @block: block; @color: #fff) {
     &:after {
-        display: block;
-        content: @font;
-        .font-size();
+        display: @block;
+        content: "\@{font}";
+        font-family: @icon-font-family;
+        .font-size(@size);
+        font-weight: @weight;
+        vertical-align: middle;
+        color: @color;
     }
 }
 
 
 .icon_back {
-    .icon(123f);
+    .icon(@font: ea44; @size: 20; @color: #000);
 }

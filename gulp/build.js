@@ -2,14 +2,8 @@ var fs   = require('fs'),
     argv = require('yargs').argv,
     os   = require('os');
 
-var getProject = require('./tools/folder.js'),
-    buildFolder = require('./tools/build.folder.js')();
-
-
-var $folder = argv.f, // 默认打APP的包，如果要打H5的包就 --g web
-    d           = new Date(),
-    version     = d.getTime(),
-    veros       = os.platform();
+var $folder = argv.f,
+    veros   = os.platform();
 
 module.exports = function (gulp, $) {
 
@@ -29,8 +23,60 @@ module.exports = function (gulp, $) {
                 './mockup/**/all.less',
                 '!./mockup/common/all.less'
             ])
+            .pipe($.plumber())
             .pipe($.less())
+            .pipe($.autoprefixer({
+                browsers: ['last 2 versions']
+            }))
+            .pipe($.size({
+                title: 'css--------------------------------'
+            }))
             .pipe(gulp.dest('./mockup/'));
+    });
+
+
+    gulp.task('connect', function () {
+        var url = '',
+            port = 9999;
+
+        $.connect.server({
+            root: "./mockup/",
+            port: port,
+            livereload: true
+        });
+
+        switch (veros) {
+            case 'win32':
+                url = 'start http://localhost:' + port;
+            break;
+
+            case 'darwin':
+                url = 'open http://localhost:' + port;
+            break;
+        }
+
+        gulp.src('')
+            .pipe($.shell(url));
+    });
+
+
+    gulp.task('watch', function() {
+        $.livereload.listen();
+
+        gulp.src([
+                './mockup/**/*.less',
+                '!./mockup/common/all.less'
+            ])
+            .pipe($.plumber())
+            .pipe($.watch([
+                    './mockup/**/*.less',
+                    '!./mockup/common/all.less'
+                ], function() {
+                    gulp.start('less');
+                })
+            )
+            .pipe($.livereload());
+
     });
 
 };

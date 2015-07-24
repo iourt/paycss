@@ -10,4 +10,6 @@ module.exports = function (gulp, $) {
 
     gulp.task('init', ['folder']);
 
+    gulp.task('run', ['less', 'connect', 'watch']);
+
 };
