@@ -1,58 +1,52 @@
 <!DOCTYPE html>
 <html ng-app="phoneApp">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title>APP HTML</title>
-        <!-- inject:css -->
-        <link rel="stylesheet" href="../source/all.css">
-        <!-- endinject -->
-    </head>
-    <body>
-        <section class="side_mod">
-            <div class="side_left">
-                <ul>
-                    <li><a href="#header">Header Style</a></li>
-                    <li><a href="#icon">Icon Style</a></li>
-                    <li><a href="#loading">Loading Style</a></li>
-                </ul>
-            </div>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>APP HTML</title>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../source/all.css">
+    <!-- endinject -->
+</head>
+<body>
+    
+    <ul class="side_left">
+        <li><a href="#color">Color Style</a></li>
+        <li><a href="#header">Header Style</a></li>
+        <li><a href="#icon">Icon Style</a></li>
+        <li><a href="#loading">Loading Style</a></li>
+    </ul>
 
-            <div class="side_right">
-                <div class="demo_wrapper">
+    <section class="side_mod">
+        <h1 id="color">Color</h1>
+        <ul class="demo_color">
+            <li>color-orange</li>
+            <li>color-blue</li>
+            <li>color-gray</li>
+            <li>color-black</li>
+        </ul>
 
-                    <h1 id="color">Color</h1>
-                    <ul class="demo_color">
-                        <li>color-orange</li>
-                        <li>color-blue</li>
-                        <li>color-gray</li>
-                        <li>color-black</li>
-                    </ul>
+        <h1 id="header">Header</h1>
+        <div style="padding:10px;">
+            <header class="mod_header">
+                <p class="icon_back"></p>
+                <h1></h1>
+                <div></div>
+            </header>
+        </div>
 
-                    <h1>Header</h1>
-                    <div style="padding:10px;">
-                        <header class="mod_header">
-                            <p class="icon_back"></p>
-                            <h1></h1>
-                            <div></div>
-                        </header>
-                    </div>
-
-                    <h1 id="icon">Icon</h1>
-                    <ul class="demo_icon">
-                        <li class="icon_back"></li>
-                        <li class="icon_arrow"></li>
-                        <li class="icon_arrow_back"></li>
-                        <li class="icon_ok"></li>
-                    </ul>
+        <h1 id="icon">Icon</h1>
+        <ul class="demo_icon">
+            <li class="icon_back"></li>
+            <li class="icon_arrow"></li>
+            <li class="icon_arrow_back"></li>
+            <li class="icon_ok"></li>
+        </ul>
 
 
-                    <h1 id="icon">Loading</h1>
+        <h1 id="icon">Loading</h1>
+    </section>
 
-                </div>
-            </div>
-        </section>
-
-    </body>
+</body>
 </html>
