@@ -43,6 +43,7 @@ module.exports = function (gulp, $) {
                 title: 'css--------------------------------'
             }))
             .pipe(gulp.dest(dest));
+            // .pipe($.livereload());
     });
 
 
@@ -79,13 +80,10 @@ module.exports = function (gulp, $) {
                 '!./mockup/package/all.less'
             ])
             .pipe($.plumber())
-            .pipe($.watch([
-                    './mockup/**/*.less',
-                    '!./mockup/package/all.less'
-                ], function() {
-                    gulp.start('less');
-                })
-            )
+            .pipe($.watch(['./mockup/**/*.less', '!./mockup/package/all.less'], function() {
+                gulp.start('less');
+            }))
+            .pipe($.watch('./mockup/**/*.html', function () {}))
             .pipe($.livereload());
     });
 

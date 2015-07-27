@@ -1,4 +1,4 @@
-﻿.icon(@font, @size: 14, @weight: normal, @block: block, @color: #fff) {
+﻿.icon(@font: fff, @size: 14, @weight: normal, @block: block, @color: #ddd) {
     &:after {
         display: @block;
         content: "\@{font}";
@@ -12,5 +12,9 @@
 
 
 .icon_back {
-    .icon(@font: ea44, @size: 20, @color: #999);
+    .icon(@font: f124, @size: 20, @color: #fff);
+}
+
+.icon_arrow {
+    .icon(@font: f3d3, @size: 20);
 }
