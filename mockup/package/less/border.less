@@ -1,7 +1,9 @@
 ﻿.unit-border-half(@path: all) when (@path = top), (@path = right), (@path = bottom), (@path = left) {
+    border-width: 0;
     border-@{path}: 1px solid #dedede;
 }
 .unit-border-half(@path: all) when (default()) {
+    border-width: 1px;
     border: 1px solid #dedede;
 }
 .unit-border-half-image() {
@@ -9,72 +11,61 @@
 }
 
 .border-half() {
-    border-width: 1px;
     .unit-border-half();
     .unit-border-half-image();
 }
 
 .border-top-half() {
-    border-width: 0;
     .unit-border-half(top);
     .unit-border-half-image();
 }
 
 .border-bottom-half() {
-    border-width: 0;
     .unit-border-half(bottom);
     .unit-border-half-image();
 }
 
 .border-left-half() {
-    border-width: 0;
     .unit-border-half(left);
     .unit-border-half-image();
 }
 
 .border-right-half() {
-    border-width: 0;
     .unit-border-half(right);
     .unit-border-half-image();
 }
 
 .border-vertical-half() {
-    border-width: 0;
     .unit-border-half(top);
     .unit-border-half(bottom);
     .unit-border-half-image();
 }
 
 .border-horizontal-half() {
-    border-width: 0;
     .unit-border-half(left);
     .unit-border-half(right);
     .unit-border-half-image();
 }
 
 .border-left-bottom-half() {
-    border-width: 0;
     .unit-border-half(left);
     .unit-border-half(bottom);
     .unit-border-half-image();
 }
 
 .border-right-bottom-half() {
-    border-width: 0;
     .unit-border-half(right);
     .unit-border-half(bottom);
     .unit-border-half-image();
 }
 
 .border-left-top-half() {
-    border-width: 0;
     .unit-border-half(top);
     .unit-border-half(left);
     .unit-border-half-image();
 }
 
 .border-right-top-half() {
-    border-width: 0;
     .unit-border-half(top);
     .unit-border-half(right);
     .unit-border-half-image();

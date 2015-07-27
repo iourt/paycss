@@ -55,19 +55,13 @@
 }
 
 // 阴影
-.box-shadow(@x: 0; @y: 0; @blur: 1px; @color: #000) {
+.box-shadow(@x: 0, @y: 0, @blur: 1px, @color: #000) {
     -webkit-box-shadow+: @arguments;
             box-shadow+: @arguments;
 }
 
 // 圆角
-.border-radius(@radius: 5px) {
-    -webkit-border-radius: @radius;
-            border-radius: @radius;
+.border-radius(@tl: 5px, @tr: 5px, @bl: 5px, @br: 5px) {
+    -webkit-border-radius: @arguments;
+            border-radius: @arguments;
 }
-
-
-.a {
-    .border-radius(10px);
-}
-
