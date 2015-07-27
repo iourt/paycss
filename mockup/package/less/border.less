@@ -1,8 +1,8 @@
 ﻿.unit-border-half(@path: all) when (@path = top), (@path = right), (@path = bottom), (@path = left) {
-    border-@{path}: 1px solid #dedede;
+    border-@{path}: 1px solid @color-gray;
 }
 .unit-border-half(@path: all) when (default()) {
-    border: 1px solid #dedede;
+    border: 1px solid @color-gray;
 }
 .unit-border-half-image() {
     -webkit-border-image: url(images/border_half.png) 2 stretch;
