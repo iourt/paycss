@@ -1,4 +1,8 @@
-﻿.unit-border-half(@path: all) when (@path = top), (@path = right), (@path = bottom), (@path = left) {
+﻿/**
+ * 半像素边框
+ * 
+ */
+.unit-border-half(@path: all) when (@path = top), (@path = right), (@path = bottom), (@path = left) {
     border-@{path}: 1px solid @color-gray;
 }
 .unit-border-half(@path: all) when (default()) {

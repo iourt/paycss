@@ -11,6 +11,8 @@
 </head>
 <body>
     
+    <div class="demo_menu icon_menu"></div>
+
     <ul class="side_left">
         <li><a href="#color">Color Style</a></li>
         <li><a href="#header">Header Style</a></li>
@@ -19,33 +21,70 @@
     </ul>
 
     <section class="side_mod">
-        <h1 id="color">Color</h1>
+        <h1 class="demo_h1" id="color">Color</h1>
         <ul class="demo_color">
-            <li>color-orange</li>
-            <li>color-blue</li>
-            <li>color-gray</li>
-            <li>color-black</li>
+            <li class="color_orange">color-orange</li>
+            <li class="color_blue">color-blue</li>
+            <li class="color_gray">color-gray</li>
+            <li class="color_black">color-black</li>
         </ul>
 
-        <h1 id="header">Header</h1>
-        <div style="padding:10px;">
+        <h1 class="demo_h1" id="header">Header</h1>
+        <div class="demo_header">
             <header class="mod_header">
                 <p class="icon_back"></p>
-                <h1></h1>
+                <h1>这里是标题，文字过多自动截取（带省略号...）</h1>
+                <div>
+                    <button class="button">按钮</button>
+                </div>
+            </header>
+
+            <header class="mod_header">
+                <p class="icon_arrow_left"></p>
+                <h1>这里是标题</h1>
+                <div>
+                    <button class="button">按钮</button>
+                </div>
+            </header>
+
+            <header class="mod_header">
+                <p class="icon_back"></p>
+                <h1>这里是标题</h1>
+                <div></div>
+            </header>
+
+            <header class="mod_header bg_blue">
+                <p class="icon_arrow_back"></p>
+                <h1>这里是标题</h1>
+                <div class="icon_menu"></div>
+            </header>
+
+            <header class="mod_header bg_blue">
+                <p class="icon_arrow_back"></p>
+                <h1>这里是标题</h1>
+                <div></div>
+            </header>
+
+
+            <header class="mod_header bg_gray">
+                <p class="icon_arrow_left"></p>
+                <h1 class="color_black">这里是标题</h1>
                 <div></div>
             </header>
         </div>
 
-        <h1 id="icon">Icon</h1>
+        <h1 class="demo_h1" id="icon">Icon</h1>
         <ul class="demo_icon">
-            <li class="icon_back"></li>
-            <li class="icon_arrow"></li>
-            <li class="icon_arrow_back"></li>
-            <li class="icon_ok"></li>
+            <li class="icon_back">icon_back</li>
+            <li class="icon_arrow_left">icon_arrow_left</li>
+            <li class="icon_arrow_right">icon_arrow_right</li>
+            <li class="icon_arrow_back">icon_arrow_back</li>
+            <li class="icon_ok">icon_ok</li>
+            <li class="icon_menu">icon_menu</li>
         </ul>
 
 
-        <h1 id="icon">Loading</h1>
+        <h1 class="demo_h1" id="icon">Loading</h1>
     </section>
 
 </body>

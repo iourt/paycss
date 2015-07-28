@@ -1,21 +1,40 @@
-﻿@body-bg: #fff;
+﻿@body-bg: #fff; // 背景色定义
 
 
 
 
 
-@icon-version: "0.0.1";
-// @icon-font-family: "Ionicons";
-@icon-font-family: "IcoMoon-Free";
-@icon-font-path: "fonts";
+/**
+ * icon 字体定义
+ */
+@icon-version:     "0.0.1";
+@icon-font-family: "Ionicons";
+@icon-font-path:   "fonts";
 
 
-// 色值定义
-@color-black: #353535; //---黑色
-@color-orange: #e75012; //--橙色
-@color-blue: #0087e3; //----蓝色
-@color-gray: #e2e2e2; //----灰色(边框为此色)
+/**
+ * 色值定义
+ * 字体色 color_*
+ * 背景色 bg_*
+ */
+@color-black:  #353535; // 黑色
+@color-orange: #e75012; // 橙色
+@color-blue:   #0087e3; // 蓝色
+@color-gray:   #e2e2e2; // 灰色(边框为此色)
 
+// 字体颜色
+.color_black {
+    color: @color-black !important;
+}
+.color_orange {
+    color: @color-orange !important;
+}
+.color_blue {
+    color: @color-blue !important;
+}
+.color_gray {
+    color: @color-gray !important;
+}
 
 // 背景颜色值定义
 .bg_orange {
@@ -23,4 +42,7 @@
 }
 .bg_blue {
     background: @color-blue !important;
+}
+.bg_gray {
+    background: @color-gray !important;
 }
