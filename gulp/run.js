@@ -1,7 +1,6 @@
 var fs = require('fs'),
     argv = require('yargs').argv,
-    os = require('os'),
-    inject = require('gulp-inject');
+    os = require('os');
 
 var runType = argv.run || '', // dev、build
     packageType = argv.g || 'app';
