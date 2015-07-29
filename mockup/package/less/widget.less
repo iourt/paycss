@@ -36,12 +36,30 @@
  .box-sizing(@val) {
     -webkit-box-sizing: @val;
  }
- .box-border {
+ .box_border { //border和padding计算入width之内，其实就是怪异模式
     .box-sizing(border-box);
+ }
+ .box_padding { //padding计算入width内
+    .box-sizing(padding-box);
  }
 
 
-
+/**
+ * 盒子
+ */
+.box {
+    display: -webkit-box;
+    & > * {
+        display: block;
+    }
+}
+.box_align {
+    -webkit-box-align: center; 
+}
+.box_flex {
+    width: 0;
+    -webkit-box-flex: 1;
+}
 
 
 
