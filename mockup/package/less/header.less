@@ -1,13 +1,13 @@
 ﻿.mod_header {
     background: @color-orange;
     display: -webkit-box;
+    -webkit-box-align: center;
     height: 44px;
     p {
         width: 44px;
-        line-height: 44px;
         text-align: center;
-        &.icon_back:before {
-            margin-top: 9px;
+        &:before{
+            line-height: 22px;
         }
     }
     h1 {
@@ -15,12 +15,12 @@
         text-align: center;
         .ellipsis();
         color: #fff;
-        line-height: 44px;
         -webkit-box-flex: 1;
         .font-size(16);
     }
     div {
         width: 44px;
+        text-align: center;
         .button {
             .font-size(14);
             line-height: 44px;
