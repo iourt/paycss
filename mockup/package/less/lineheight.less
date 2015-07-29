@@ -1,0 +1,11 @@
+﻿/**
+ * line-height
+ */
+.line-height(@n) when (@n > 0) {
+    .line-height((@n - 1));
+    .lh@{n} {
+        line-height: (1px * @n) !important;
+    }
+}
+
+.line-height (30);

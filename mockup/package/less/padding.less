@@ -1,0 +1,36 @@
+﻿/**
+ * padding: top,right,bottom,left
+ * 1~30
+ */
+.padding(@n, @type: t) when (@n > 0) {
+    .padding((@n - 1), @type);
+    & when (@type = t) {
+        @path: top;
+        .p@{type}@{n} {
+            padding-@{path}: (1px * @n) !important;
+        }
+    }
+    & when (@type = r) {
+        @path: right;
+        .p@{type}@{n} {
+            padding-@{path}: (1px * @n) !important;
+        }
+    }
+    & when (@type = b) {
+        @path: bottom;
+        .p@{type}@{n} {
+            padding-@{path}: (1px * @n) !important;
+        }
+    }
+    & when (@type = l) {
+        @path: left;
+        .p@{type}@{n} {
+            padding-@{path}: (1px * @n) !important;
+        }
+    }
+}
+
+.padding(30, t);
+.padding(30, r);
+.padding(30, b);
+.padding(30, l);

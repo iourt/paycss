@@ -1,11 +1,21 @@
-var fs   = require('fs'),
-    argv = require('yargs').argv,
-    os   = require('os');
-
-var reporter = require('gulp-less-reporter');
-
-var $folder = argv.f || "",
+var fs      = require('fs'),
+    argv    = require('yargs').argv,
+    os      = require('os'),
+    $folder = argv.f || "",
     veros   = os.platform();
+
+var cssFiles = [
+        './mockup/**/all.less',
+        '!./mockup/package/all.less'
+    ],
+    cssDest = './mockup/';
+
+if ($folder) {
+    cssFiles = [
+        './mockup/'+ $folder +'/source/all.less'
+    ];
+    cssDest = './mockup/'+ $folder +'/source/';
+};
 
 module.exports = function (gulp, $) {
 
@@ -21,18 +31,8 @@ module.exports = function (gulp, $) {
 
     // less编译成CSS
     gulp.task('less', function () {
-        var files = [
-                './mockup/**/all.less',
-                '!./mockup/package/all.less'
-            ],
-            dest = './mockup/';
 
-        if ($folder) {
-            files = './mockup/'+ $folder +'/source/all.less';
-            dest = './mockup/'+ $folder +'/source/';
-        };
-
-        return gulp.src(files)
+        return gulp.src(cssFiles)
             .pipe($.plumber())
             .pipe($.less())
             .on('error', $.lessReporter)
@@ -42,7 +42,7 @@ module.exports = function (gulp, $) {
             .pipe($.size({
                 title: 'css--------------------------------'
             }))
-            .pipe(gulp.dest(dest));
+            .pipe(gulp.dest(cssDest));
             // .pipe($.livereload());
     });
 
@@ -81,9 +81,19 @@ module.exports = function (gulp, $) {
             ])
             .pipe($.plumber())
             .pipe($.watch(['./mockup/**/*.less', '!./mockup/package/all.less'], function() {
-                gulp.start('less');
-            }))
-            .pipe($.livereload());
+                gulp.src(cssFiles)
+                    .pipe($.plumber())
+                    .pipe($.less())
+                    .on('error', $.lessReporter)
+                    .pipe($.autoprefixer({
+                        browsers: ['last 2 versions']
+                    }))
+                    .pipe($.size({
+                        title: 'css--------------------------------'
+                    }))
+                    .pipe(gulp.dest(cssDest))
+                    .pipe($.livereload());
+            }));
 
         gulp.src('./mockup/**/*.html')
             .pipe($.watch('./mockup/**/*.html'))

@@ -1,0 +1,35 @@
+﻿/**
+ * margin
+ */
+.margin(@n, @type: t) when (@n > 0) {
+    .margin((@n - 1), @type);
+    & when (@type = t) {
+        @path: top;
+        .m@{type}@{n} {
+            margin-@{path}: (1px * @n) !important;
+        }
+    }
+    & when (@type = r) {
+        @path: right;
+        .m@{type}@{n} {
+            margin-@{path}: (1px * @n) !important;
+        }
+    }
+    & when (@type = b) {
+        @path: bottom;
+        .m@{type}@{n} {
+            margin-@{path}: (1px * @n) !important;
+        }
+    }
+    & when (@type = l) {
+        @path: left;
+        .m@{type}@{n} {
+            margin-@{path}: (1px * @n) !important;
+        }
+    }
+}
+
+.margin(30, t);
+.margin(30, r);
+.margin(30, b);
+.margin(30, l);
