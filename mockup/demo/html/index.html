@@ -11,17 +11,16 @@
 </head>
 <body>
 
-    <div id="tab_1" class="demo_app_menu">
-        <div><a class="icon_arrow_left" href="#tab_1">1</a></div>
-        <p><a class="icon_arrow_left" href="#tab_1">1</a></p>
+    <div id="tab_menu" class="js_menu demo_app_menu">
+        <div class="js_icon icon_arrow_left"></div>
 
-        <ul>
-            <li><a target="right" href="header.html">Header</a></li>
-            <li><a target="right" href="color.html">Color</a></li>
-            <li><a target="right" href="icon.html">Icon</a></li>
-            <li><a target="right" href="border.html">Border</a></li>
-            <li><a target="right" href="font.html">Text-align、Font</a></li>
-            <li><a target="right" href="button.html">Button</a></li>
+        <ul class="js_list">
+            <li><a target="right" href="color.html#tab_menu">Color</a></li>
+            <li><a target="right" href="header.html#tab_menu">Header</a></li>
+            <li><a target="right" href="icon.html#tab_menu">Icon</a></li>
+            <li><a target="right" href="border.html#tab_menu">Border</a></li>
+            <li><a target="right" href="font.html#tab_menu">Text-align、Font</a></li>
+            <li><a target="right" href="button.html#tab_menu">Button</a></li>
         </ul>
     </div>
 
@@ -30,15 +29,41 @@
             <li>
     <a href="pafuplugin://calllocalplugin?pluginId=B0000004&businessParams=&restartUrl=http%3A%2F%2Fwww.baidu.com&reserveData=">pafuplugin://calllocalplugin?pluginId=&businessParams=&restartUrl=&reserveData=</a>
             </li>
-            <li><a target="right" href="header.html">Header</a></li>
             <li><a target="right" href="color.html">Color</a></li>
+            <li><a target="right" href="header.html">Header</a></li>
             <li><a target="right" href="icon.html">Icon</a></li>
             <li><a target="right" href="border.html">Border</a></li>
             <li><a target="right" href="font.html">Text-align、Font</a></li>
             <li><a target="right" href="button.html">Button</a></li>
         </ul>
 
-        <iframe name="right" id="rightMain" src="header.html" frameborder="false" scrolling="auto" class="frame_right" allowtransparency="true"></iframe>
+        <iframe name="right" src="color.html" frameborder="false" scrolling="auto" class="frame_right" allowtransparency="true"></iframe>
     </section>
+
+
+    <script type="text/javascript">
+        var $that = document.querySelector('.js_icon'),
+            $list = document.querySelector('.js_list'),
+            $menu = document.querySelector('.js_menu'),
+            isClicked = false;
+
+        $that.addEventListener('click', function () {
+            if (isClicked) {
+                $menu.className = 'js_menu demo_app_menu animate_hide';
+                $that.className = 'js_icon icon_arrow_left';
+            } else {
+                $menu.className = 'js_menu demo_app_menu animate_show';
+                $that.className = 'js_icon icon_arrow_right';       
+            }
+
+            isClicked = !isClicked;
+        }, false);
+
+        $list.addEventListener('click', function () {
+            $menu.className = 'js_menu demo_app_menu animate_hide';
+            $that.className = 'js_icon icon_arrow_left';
+            isClicked = false;
+        }, false);
+    </script>
 </body>
 </html>

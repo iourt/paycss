@@ -1,4 +1,4 @@
-﻿.icon(@font: fff, @size: 14, @weight: normal, @block: inline-block, @color: #fff) {
+﻿.icon(@font: fff, @size: 28, @weight: normal, @block: inline-block, @color: #fff) {
     &:before {
         display: @block;
         content: "\@{font}";
@@ -16,19 +16,27 @@
 
 // 各种 icon 定义
 .icon_back {
-    .icon(@font: e60a, @size: 28, @color: #fff);
+    .icon(@font: e60a, @color: #fff);
 }
 
 .icon_arrow_back {
-    .icon(@font: e606, @size: 28, @color: #fff);
+    .icon(@font: e606, @color: #fff);
 }
 
 .icon_arrow_left {
-    .icon(@font: e611, @size: 28);
+    .icon(@font: e611);
 }
 
 .icon_arrow_right {
-    .icon(@font: e614, @size: 28);
+    .icon(@font: e614);
+}
+
+.icon_arrow_up {
+    .icon(@font: e612);
+}
+
+.icon_arrow_down {
+    .icon(@font: e613);
 }
 
 .icon_clear {
@@ -36,7 +44,7 @@
 }
 
 .icon_ok {
-    .icon(@font: e60b, @size: 28, @color: #0087e3);
+    .icon(@font: e60b, @color: #0087e3);
 }
 
 .icon_circle {
@@ -44,15 +52,15 @@
 }
 
 .icon_sum {
-    .icon(@font: e604, @size: 28);
+    .icon(@font: e604);
 }
 
 .icon_close {
-    .icon(@font: e608, @size: 28);
+    .icon(@font: e608);
 }
 
 .icon_help {
-    .icon(@font: e60e, @size: 28);
+    .icon(@font: e60e);
 }
 
 
