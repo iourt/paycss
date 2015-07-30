@@ -2,52 +2,57 @@
     &:before {
         display: @block;
         content: "\@{font}";
-        font-family: @icon-font-family;
+        font-family: @icon-font-family !important;
         .font-size(@size);
         font-weight: @weight;
         vertical-align: middle;
         color: @color;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+        -moz-osx-font-smoothing: grayscale;
     }
 }
 
 
 // 各种 icon 定义
 .icon_back {
-    .icon(@font: f3d2, @size: 20, @color: #fff);
-    &:before {
-        width: 22px;
-        height: 22px;
-        line-height: 22px;
-        border: 1px solid #fff;
-        margin: 0 auto;
-        text-align: left;
-        text-indent: 6px;
-        .border-radius(22px);
-    }
+    .icon(@font: e60a, @size: 28, @color: #fff);
 }
 
 .icon_arrow_back {
-    .icon(@font: f2ca, @size: 29, @color: #fff);
+    .icon(@font: e606, @size: 28, @color: #fff);
 }
 
 .icon_arrow_left {
-    .icon(@font: f3d2, @size: 30);
+    .icon(@font: e611, @size: 28);
 }
 
 .icon_arrow_right {
-    .icon(@font: f3d3, @size: 30);
+    .icon(@font: e614, @size: 28);
 }
 
 .icon_clear {
-    .icon(@font: f36e, @size: 20, @color: #ddd);
+    .icon(@font: e608, @size: 20, @color: #ddd);
 }
 
 .icon_ok {
-    .icon(@font: f3ff, @size: 30, @color: #0087e3);
+    .icon(@font: e60b, @size: 28, @color: #0087e3);
 }
 
-.icon_menu {
-    .icon(@font: f20d, @size: 30);
+.icon_circle {
+    .icon(@font: e601, @size: 12);
+}
+
+.icon_sum {
+    .icon(@font: e604, @size: 28);
+}
+
+.icon_close {
+    .icon(@font: e608, @size: 28);
+}
+
+.icon_help {
+    .icon(@font: e60e, @size: 28);
 }
 
 

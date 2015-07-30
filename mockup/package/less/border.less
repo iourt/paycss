@@ -1,85 +1,128 @@
 ﻿/**
  * 半像素边框
- * 
+ * gray 灰色边框
+ * red: #ee374f 红色边框
  */
-.unit-border-half(@path: all) when (@path = top), (@path = right), (@path = bottom), (@path = left) {
-    border-@{path}: 1px solid @color-gray;
-}
-.unit-border-half(@path: all) when (default()) {
-    border: 1px solid @color-gray;
-}
-.unit-border-half-image() {
-    -webkit-border-image: url(images/border_half.png) 2 stretch;
-}
 
-.border-half() {
-    border-width: 1px;
-    .unit-border-half();
-    .unit-border-half-image();
-}
-
-.border-top-half() {
+.border-half(@path: all, @color: gray) {
     border-width: 0;
-    .unit-border-half(top);
-    .unit-border-half-image();
+
+    & when (@color = gray) {
+        border-color: @border-gray;
+    }
+
+    & when (@color = red) {
+        border-color: @border-red;
+    }
+
+    & when (@path = vertical) {
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+    }
+
+    & when (@path = horizontal) {
+        border-left-width: 1px;
+        border-right-width: 1px;
+    }
+
+    & when (@path = top), (@path = right), (@path = bottom), (@path = left) {
+        border-@{path}-width: 1px;
+    }
+
+    & when (@path = topright) {
+        border-top-width: 1px;
+        border-right-width: 1px;
+    }
+
+    & when (@path = topleft) {
+        border-top-width: 1px;
+        border-left-width: 1px;
+    }
+    & when (@path = bottomright) {
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+    }
+
+    & when (@path = bottomleft) {
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+    }
+
+    & when (@path = all) {
+        border-width: 1px;
+    }
+
+    border-style: solid;
+    -webkit-border-image: url("images/border_half_@{color}.png") 2 stretch;
 }
 
-.border-bottom-half() {
-    border-width: 0;
-    .unit-border-half(bottom);
-    .unit-border-half-image();
+
+// 灰色半边框
+.border_half_gray {
+    .border-half(all, gray);
+}
+.border_half_gray_top {
+    .border-half(top, gray);
+}
+.border_half_gray_right {
+    .border-half(right, gray);
+}
+.border_half_gray_bottom {
+    .border-half(bottom, gray);
+}
+.border_half_gray_left {
+    .border-half(left, gray);
+}
+.border_half_gray_vertical {
+    .border-half(vertical, gray);
+}
+.border_half_gray_horizontal {
+    .border-half(horizontal, gray);
+}
+.border_half_gray_top_right {
+    .border-half(topright, gray);
+}
+.border_half_gray_top_left {
+    .border-half(topleft, gray);
+}
+.border_half_gray_bottom_right {
+    .border-half(bottomright, gray);
+}
+.border_half_gray_bottom_left {
+    .border-half(bottomleft, gray);
 }
 
-.border-left-half() {
-    border-width: 0;
-    .unit-border-half(left);
-    .unit-border-half-image();
+// 红色半边框
+.border_half_red {
+    .border-half(all, red);
 }
-
-.border-right-half() {
-    border-width: 0;
-    .unit-border-half(right);
-    .unit-border-half-image();
+.border_half_red_top {
+    .border-half(top, red);
 }
-
-.border-vertical-half() {
-    border-width: 0;
-    .unit-border-half(top);
-    .unit-border-half(bottom);
-    .unit-border-half-image();
+.border_half_red_right {
+    .border-half(right, red);
 }
-
-.border-horizontal-half() {
-    border-width: 0;
-    .unit-border-half(left);
-    .unit-border-half(right);
-    .unit-border-half-image();
+.border_half_red_bottom {
+    .border-half(bottom, red);
 }
-
-.border-left-bottom-half() {
-    border-width: 0;
-    .unit-border-half(left);
-    .unit-border-half(bottom);
-    .unit-border-half-image();
+.border_half_red_left {
+    .border-half(left, red);
 }
-
-.border-right-bottom-half() {
-    border-width: 0;
-    .unit-border-half(right);
-    .unit-border-half(bottom);
-    .unit-border-half-image();
+.border_half_red_vertical {
+    .border-half(vertical, red);
 }
-
-.border-left-top-half() {
-    border-width: 0;
-    .unit-border-half(top);
-    .unit-border-half(left);
-    .unit-border-half-image();
+.border_half_red_horizontal {
+    .border-half(horizontal, red);
 }
-
-.border-right-top-half() {
-    border-width: 0;
-    .unit-border-half(top);
-    .unit-border-half(right);
-    .unit-border-half-image();
+.border_half_red_top_right {
+    .border-half(topright, red);
+}
+.border_half_red_top_left {
+    .border-half(topleft, red);
+}
+.border_half_red_bottom_right {
+    .border-half(bottomright, red);
+}
+.border_half_red_bottom_left {
+    .border-half(bottomleft, red);
 }

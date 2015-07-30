@@ -1,11 +1,13 @@
-﻿@font-face {
-    font-family: @icon-font-family;
-    src:url("@{icon-font-path}/ionicons.eot?v=@{icon-version}");
-    src:url("@{icon-font-path}/ionicons.eot?v=@{icon-version}") format("embedded-opentype"),
-        url("@{icon-font-path}/ionicons.ttf?v=@{icon-version}") format("truetype"),
-        url("@{icon-font-path}/ionicons.woff?v=@{icon-version}") format("woff"),
-        url("@{icon-font-path}/ionicons.woff") format("woff"), /* for WP8 */
-        url("@{icon-font-path}/ionicons.svg?v=@{icon-version}") format("svg");
-    font-weight: normal;
-    font-style: normal;
+﻿/**
+ * font
+ * 12 ~ 30
+ */
+.font-loop(@n) when(@n > 11) {
+    .font-loop((@n - 1));
+    .font_@{n} {
+        .font-size(@n);
+    }
 }
+
+
+.font-loop(30);

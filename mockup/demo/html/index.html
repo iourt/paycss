@@ -10,84 +10,35 @@
     <!-- endinject -->
 </head>
 <body>
-    
-    <div class="demo_menu icon_menu"></div>
 
-    <ul class="side_left">
-        <li><a href="#color">Color Style</a></li>
-        <li><a href="#header">Header Style</a></li>
-        <li><a href="#icon">Icon Style</a></li>
-        <li><a href="#loading">Loading Style</a></li>
-    </ul>
+    <div id="tab_1" class="demo_app_menu">
+        <div><a class="icon_arrow_left" href="#tab_1">1</a></div>
+        <p><a class="icon_arrow_left" href="#tab_1">1</a></p>
 
-    <section class="side_mod">
+        <ul>
+            <li><a target="right" href="header.html">Header</a></li>
+            <li><a target="right" href="color.html">Color</a></li>
+            <li><a target="right" href="icon.html">Icon</a></li>
+            <li><a target="right" href="border.html">Border</a></li>
+            <li><a target="right" href="font.html">Text-align、Font</a></li>
+            <li><a target="right" href="button.html">Button</a></li>
+        </ul>
+    </div>
 
-
-        <h1 class="demo_h1" id="color">Color</h1>
-        <ul class="demo_color">
-            <li class="color_orange">color-orange</li>
-            <li class="color_blue">color-blue</li>
-            <li class="color_gray">color-gray</li>
-            <li class="color_black">color-black</li>
+    <section class="demo_frame">
+        <ul class="side_left">
+            <li>
+    <a href="pafuplugin://calllocalplugin?pluginId=B0000004&businessParams=&restartUrl=http%3A%2F%2Fwww.baidu.com&reserveData=">pafuplugin://calllocalplugin?pluginId=&businessParams=&restartUrl=&reserveData=</a>
+            </li>
+            <li><a target="right" href="header.html">Header</a></li>
+            <li><a target="right" href="color.html">Color</a></li>
+            <li><a target="right" href="icon.html">Icon</a></li>
+            <li><a target="right" href="border.html">Border</a></li>
+            <li><a target="right" href="font.html">Text-align、Font</a></li>
+            <li><a target="right" href="button.html">Button</a></li>
         </ul>
 
-        <h1 class="demo_h1" id="header">Header</h1>
-        <div class="demo_header">
-            <header class="mod_header">
-                <p class="icon_back"></p>
-                <h1>这里是标题，文字过多自动截取（带省略号...）</h1>
-                <div>
-                    <button class="button">按钮</button>
-                </div>
-            </header>
-
-            <header class="mod_header">
-                <p class="icon_arrow_left"></p>
-                <h1>这里是标题</h1>
-                <div>
-                    <button class="button">按钮</button>
-                </div>
-            </header>
-
-            <header class="mod_header">
-                <p class="icon_back"></p>
-                <h1>这里是标题</h1>
-                <div></div>
-            </header>
-
-            <header class="mod_header bg_blue">
-                <p class="icon_arrow_back"></p>
-                <h1>这里是标题</h1>
-                <div class="icon_menu"></div>
-            </header>
-
-            <header class="mod_header bg_blue">
-                <p class="icon_arrow_back"></p>
-                <h1>这里是标题</h1>
-                <div></div>
-            </header>
-
-
-            <header class="mod_header bg_gray">
-                <p class="icon_arrow_left"></p>
-                <h1 class="color_black">这里是标题</h1>
-                <div></div>
-            </header>
-        </div>
-
-        <h1 class="demo_h1" id="icon">Icon</h1>
-        <ul class="demo_icon">
-            <li class="icon_back">icon_back</li>
-            <li class="icon_arrow_left">icon_arrow_left</li>
-            <li class="icon_arrow_right">icon_arrow_right</li>
-            <li class="icon_arrow_back">icon_arrow_back</li>
-            <li class="icon_ok">icon_ok</li>
-            <li class="icon_menu">icon_menu</li>
-        </ul>
-
-
-        <h1 class="demo_h1" id="icon">Loading</h1>
+        <iframe name="right" id="rightMain" src="header.html" frameborder="false" scrolling="auto" class="frame_right" allowtransparency="true"></iframe>
     </section>
-
 </body>
 </html>
