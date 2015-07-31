@@ -39,9 +39,7 @@ module.exports = function (gulp, $) {
             .pipe($.autoprefixer({
                 browsers: ['last 2 versions']
             }))
-            .pipe($.size({
-                title: 'css--------------------------------'
-            }))
+            .pipe($.size())
             .pipe(gulp.dest(cssDest));
             // .pipe($.livereload());
     });
@@ -88,9 +86,7 @@ module.exports = function (gulp, $) {
                     .pipe($.autoprefixer({
                         browsers: ['last 2 versions']
                     }))
-                    .pipe($.size({
-                        title: 'css--------------------------------'
-                    }))
+                    .pipe($.size())
                     .pipe(gulp.dest(cssDest))
                     .pipe($.livereload());
             }));
