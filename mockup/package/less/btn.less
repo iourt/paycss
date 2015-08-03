@@ -1,15 +1,14 @@
-﻿.button (@display: block, @width: 100%, @height: 30px, @bgcolor: none, @color: #fff) {
+﻿.button (@display: block, @height: 40px, @bgcolor: #eee, @color: #000) {
     display: @display;
     border: 0;
     text-align: center;
     outline: none;
-    width: @width;
     line-height: @height;
     margin: 0 auto;
     background: @bgcolor;
     color: @color;
+    .font-size(16);
 }
-
 
 .button {
     .button();

@@ -1,0 +1,20 @@
+﻿/**
+ * tab:
+ */
+
+.mod_tab {
+    display: -webkit-box;
+    & > * {
+        display: block;
+        width: 0;
+        text-align: center;
+        line-height: 40px;
+        margin-right: 5px;
+        .bg_gray();
+        .font-size();
+        -webkit-box-flex: 1;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

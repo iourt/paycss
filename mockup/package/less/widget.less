@@ -20,20 +20,23 @@
 .fr { float: right; }
 
 
+// 字保持一行不换行
+.oneline { white-space:nowrap; }
+
 /**
  * font
  * normal 正常字体
  * bold 加粗字体
  */
 .font_normal { font-weight: normal !important; }
-.font_bold { font-weight: bold !important; }
+.font_bold   { font-weight: bold !important; }
 
 
 /**
  * display: inline-block、block
  */
 .dib { display: inline-block !important; }
-.db { display: block !important; }
+.db  { display: block !important; }
 .div_none { display: none !important; }
 .div_show { display: block !important; }
 
@@ -42,8 +45,8 @@
  * align: center、left、right
  */
 .text_center { text-align: center !important; }
-.text_left { text-align: left !important; }
-.text_right { text-align: right !important; }
+.text_left   { text-align: left !important; }
+.text_right  { text-align: right !important; }
 
 
 /**
@@ -64,7 +67,7 @@
  * 盒子
  */
 .box {
-    display: -webkit-box;
+    display: -webkit-box !important;
     & > * {
         display: block;
     }
@@ -79,4 +82,80 @@
 
 
 
+/**
+ * border-radius
+ */
+.border_radius_3 {
+    .border-radius(3px);
+}
 
+
+/**
+ * list
+ */
+.list-height (@h: 30px) {
+    & > * {
+        line-height: @h;
+    }
+}
+.list_h20{ .list-height(20px); }
+.list_h30{ .list-height(); }
+.list_h40{ .list-height(40px); }
+
+.list_box {
+    & > * {
+        .box();
+    }
+}
+.list_box_align {
+    & > * {
+        .box_align();
+    }
+}
+
+.list_ptb10 {
+    & > * {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+.list_ptb15 {
+    & > * {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+.list_ptb20 {
+    & > * {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+.list_plr10 {
+    & > * {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+.list_p10 {
+    & > * {
+        padding: 10px;
+    }
+}
+.list_db {
+    & > * {
+        display: block;
+    }
+}
+.list_dib {
+    font-size: 0;
+    & > * {
+        .font-size();
+        display: inline-block;
+    }
+}
+.list_border {
+    & > * {
+        .border_half_gray_bottom();
+    }
+}
