@@ -1,4 +1,12 @@
-﻿.icon(@font: fff, @size: 28, @weight: normal, @block: inline-block, @color: #fff) {
+﻿/**
+ * 常用icon定义
+ * font: 显示的icon式样（字体icon）
+ * size: 大小
+ * weight: 字体样式
+ * block: 块级、内联
+ * color: icon 颜色值
+ */
+.icon(@font: fff, @size: 28, @weight: normal, @block: inline-block, @color: #fff) {
     &:before {
         display: @block;
         content: "\@{font}";
@@ -65,18 +73,42 @@
 
 
 /**
- * bank icons
+ * 银行相关icon
+ * width: 宽度
+ * height: 高度
+ * site: 位于图片中的位置
+ * scale: background-size
+ * image: 图片名称
  */
-.icon-bank (@size: 40px, @site: 0 0, @scale: 4/7) {
+.icon-bank (@width: 40px, @height: 40px, @site: 0 0, @scale: 4/7, @image: icon_bank) {
     &:before {
-        width: @size;
-        height: @size;
+        width: @width;
+        height: @height;
         content: "";
         display: inline-block;
         vertical-align: middle;
-        background: url(images/icon_bank.png) no-repeat @site;
-        background-size: auto (1400 * @scale) * 1px;
+        background: url("images/@{image}.png") no-repeat @site;
+        & when (@scale > 0) {
+            background-size: auto (1400 * @scale) * 1px;
+        }
+        & when (@scale = 0) {
+            background-size: 100% auto;
+        }
     }
+}
+
+
+// 支付宝
+.bank_alipay {
+    .icon-bank(@scale: 0, @image: icon_alipay);
+}
+// 块钱
+.bank_bill {
+    .icon-bank(@scale: 0, @image: icon_bill);
+}
+// 微信
+.bank_weixin {
+    .icon-bank(@scale: 0, @image: icon_weixin);
 }
 
 // 中国农业银行
