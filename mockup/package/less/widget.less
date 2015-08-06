@@ -19,17 +19,20 @@
 .fl { float: left; }
 .fr { float: right; }
 
-
-// 字保持一行不换行
-.oneline { white-space:nowrap; }
+.pos_s { position: static !important; }
+.pos_f { position: fixed !important; }
+.pos_a { position: absolute !important; }
+.pos_r { position: relative !important; }
+.oneline    { white-space: nowrap !important; } // 文字保持一行不换行
+.ellipsis   { .ellipsis(); } // 单行文字显示省略号...
 
 /**
  * font
  * normal 正常字体
  * bold 加粗字体
  */
-.font_normal { font-weight: normal !important; }
-.font_bold   { font-weight: bold !important; }
+.fn { font-weight: normal !important; }
+.fb { font-weight: bold !important; }
 
 
 /**
@@ -37,16 +40,16 @@
  */
 .dib { display: inline-block !important; }
 .db  { display: block !important; }
-.div_none { display: none !important; }
-.div_show { display: block !important; }
+.d_hide { display: none !important; }
+.d_show { display: block !important; }
 
 
 /**
  * align: center、left、right
  */
-.text_center { text-align: center !important; }
-.text_left   { text-align: left !important; }
-.text_right  { text-align: right !important; }
+.tc { text-align: center !important; }
+.tl { text-align: left !important; }
+.tr { text-align: right !important; }
 
 
 /**
@@ -60,15 +63,15 @@
 /**
  * box-sizing: border-box、
  */
- .box-sizing(@val) {
+.box-sizing(@val) {
     -webkit-box-sizing: @val;
- }
- .box_border { //border和padding计算入width之内，其实就是怪异模式
+}
+.box_border { //border和padding计算入width之内，其实就是怪异模式
     .box-sizing(border-box);
- }
- .box_padding { //padding计算入width内
+}
+.box_padding { //padding计算入width内
     .box-sizing(padding-box);
- }
+}
 
 
 /**
@@ -91,128 +94,81 @@
 /**
  * list
  */
-.list-height (@h: 30px) {
+
+// list-line-height
+.list-line-height (@h: 30px) {
     & > * {
         line-height: @h;
     }
 }
-.list_h20{ .list-height(20px); }
-.list_h30{ .list-height(); }
-.list_h40{ .list-height(40px); }
+.li_lh20{ .list-line-height(20px); }
+.li_lh30{ .list-line-height(); }
+.li_lh40{ .list-line-height(40px); }
 
-.list_box {
+// list box
+.li_box {
     & > * {
         .box();
     }
 }
-.list_box_align {
+.li_boxa {
     & > * {
         .box_align();
     }
 }
 
-.list_ptb5 {
+// list padding
+.list-padding (@type: all, @dist: 5px) {
     & > * {
-        padding-top: 5px;
-        padding-bottom: 5px;
+        & when (@type = all) {
+            padding: @dist;
+        }
+        & when (@type = y) {
+            padding-top: @dist;
+            padding-bottom: @dist;
+        }
+        & when (@type = x) {
+            padding-left: @dist;
+            padding-right: @dist;
+        }
     }
 }
-.list_ptb10 {
-    & > * {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-}
-.list_ptb15 {
-    & > * {
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-}
-.list_ptb20 {
-    & > * {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-}
+.li_py5  { .list-padding (@type: y, @dist: 5px)}
+.li_py10 { .list-padding (@type: y, @dist: 10px)}
+.li_py15 { .list-padding (@type: y, @dist: 15px)}
+.li_py20 { .list-padding (@type: y, @dist: 20px)}
 
-.list_plr5 {
-    & > * {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-}
-.list_plr10 {
-    & > * {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-}
-.list_plr15 {
-    & > * {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-}
-.list_plr20 {
-    & > * {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
+.li_px5  { .list-padding (@type: x, @dist: 5px)}
+.li_px10 { .list-padding (@type: x, @dist: 10px)}
+.li_px15 { .list-padding (@type: x, @dist: 15px)}
+.li_px20 { .list-padding (@type: x, @dist: 20px)}
 
-.list_p5 {
-    & > * {
-        padding: 5px;
-    }
-}
-.list_p10 {
-    & > * {
-        padding: 10px;
-    }
-}
-.list_p15 {
-    & > * {
-        padding: 15px;
-    }
-}
-.list_p20 {
-    & > * {
-        padding: 20px;
-    }
-}
+.li_p5   { .list-padding (@type: all, @dist: 5px)}
+.li_p10  { .list-padding (@type: all, @dist: 10px)}
+.li_p15  { .list-padding (@type: all, @dist: 15px)}
+.li_p20  { .list-padding (@type: all, @dist: 20px)}
 
-.list_db {
+// list display: block/inline-block
+.li_db {
     & > * {
         display: block;
     }
 }
-.list_dib {
+.li_dib {
     font-size: 0;
     & > * {
         .font-size();
         display: inline-block;
     }
 }
-.list_border {
-    & > * {
-        .border_half_gray_bottom();
-    }
-}
 
-.list_lh20 {
+// list border
+.list-border (@type: bottom, @color: gray) {
     & > * {
-        line-height: 20px;
+        .border-half(@type, @color);
     }
 }
-.list_lh30 {
-    & > * {
-        line-height: 30px;
-    }
-}
-.list_lh40 {
-    & > * {
-        line-height: 40px;
-    }
-}
-
+.li_bd_a { .list-border(bottom, gray); }
+.li_bd_b { .list-border(bottom, red); }
+.li_bd_c { .list-border(bottom, black); }
+.li_bd_d { .list-border(bottom, blue); }

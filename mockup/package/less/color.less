@@ -5,14 +5,14 @@
  */
 
 // 字体颜色
-.color_white  { color: #fff !important; }
-.color_black  { color: @color-black !important; }
-.color_orange { color: @color-orange !important; }
-.color_blue   { color: @color-blue !important; }
-.color_gray   { color: @color-gray !important; }
-.color_dgray  { color: @color-dgray !important; }
-.color_lgray  { color: @color-lgray !important; }
-.color_red    { color: @color-red !important; }
+.cl_white  { color: #fff !important; }
+.cl_black  { color: @color-black !important; }
+.cl_orange { color: @color-orange !important; }
+.cl_blue   { color: @color-blue !important; }
+.cl_gray   { color: @color-gray !important; }
+.cl_dgray  { color: @color-dgray !important; }
+.cl_lgray  { color: @color-lgray !important; }
+.cl_red    { color: @color-red !important; }
 
 // 背景颜色值定义
 .bg_no     { background: none !important; }
@@ -27,40 +27,16 @@
 
 
 // icon color
-.color_icon_white {
+.color-icon(@color) {
     &:before {
-        color: @color-white !important;
+        color: @color !important;
     }
 }
-.color_icon_black {
-    &:before {
-        color: @color-black !important;
-    }
-}
-.color_icon_blue {
-    &:before {
-        color: @color-blue !important;
-    }
-}
-.color_icon_red {
-    &:before {
-        color: @color-red !important;
-    }
-}
-.color_icon_orange {
-    &:before {
-        color: @color-orange !important;
-    }
-}
-.color_icon_gray {
-    &:before {
-        color: @color-gray !important;
-    }
-}
-.color_icon_dgray {
-    &:before {
-        color: @color-dgray !important;
-    }
-}
-
+.ci_white  { .color-icon(@color: @color-white); }
+.ci_black  { .color-icon(@color: @color-black); }
+.ci_blue   { .color-icon(@color: @color-blue); }
+.ci_red    { .color-icon(@color: @color-red); }
+.ci_orange { .color-icon(@color: @color-orange); }
+.ci_gray   { .color-icon(@color: @color-gray); }
+.ci_dgray  { .color-icon(@color: @color-dgray); }
 

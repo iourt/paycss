@@ -1,11 +1,11 @@
-﻿.mod_list_input {
+﻿.li_input {
     li {
         padding: 10px;
         .border-half(bottom);
         display: -webkit-box;
         -webkit-box-align: center;
         .font-size(16);
-        .color_dgray();
+        color: @color-dgray;
         label,
         input,
         p {
@@ -22,7 +22,7 @@
             outline: none;
             height: 40px;
             .font-size(16);
-            .color_dgray();
+            color: @color-dgray;
             -webkit-box-flex: 1;
         }
         p {
@@ -39,12 +39,12 @@
 }
 
 
-.mod_list_table {
+.li_table {
     dt {
         line-height: 50px;
         text-align: center;
         .font-size(18);
-        .font_bold();
+        .fb();
         .bg_gray();
     }
     dd {

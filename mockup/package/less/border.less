@@ -15,19 +15,19 @@
     }
 
     & when (@color = black) {
-        border-color: #000;
+        border-color: @border-black;
     }
 
     & when (@color = blue) {
         border-color: @border-blue;
     }
 
-    & when (@type = vertical) {
+    & when (@type = y) {
         border-top-width: 1px;
         border-bottom-width: 1px;
     }
 
-    & when (@type = horizontal) {
+    & when (@type = x) {
         border-left-width: 1px;
         border-right-width: 1px;
     }
@@ -63,125 +63,91 @@
     -webkit-border-image: url("images/border_half_@{color}.png") 2 stretch;
 }
 
-
+/**
+ * a: gray
+ * b: red
+ * c: black
+ * d: blue
+ */
 // 灰色半边框
-.border_half_gray {
-    .border-half(all, gray);
-}
-.border_half_gray_top {
-    .border-half(top, gray);
-}
-.border_half_gray_right {
-    .border-half(right, gray);
-}
-.border_half_gray_bottom {
-    .border-half(bottom, gray);
-}
-.border_half_gray_left {
-    .border-half(left, gray);
-}
-.border_half_gray_vertical {
-    .border-half(vertical, gray);
-}
-.border_half_gray_horizontal {
-    .border-half(horizontal, gray);
-}
-.border_half_gray_top_right {
-    .border-half(topright, gray);
-}
-.border_half_gray_top_left {
-    .border-half(topleft, gray);
-}
-.border_half_gray_bottom_right {
-    .border-half(bottomright, gray);
-}
-.border_half_gray_bottom_left {
-    .border-half(bottomleft, gray);
-}
+.bh_a   { .border-half(all, gray); }
+.bht_a  { .border-half(top, gray); }
+.bhr_a  { .border-half(right, gray); }
+.bhb_a  { .border-half(bottom, gray); }
+.bhl_a  { .border-half(left, gray); }
+.bhy_a  { .border-half(y, gray); }
+.bhx_a  { .border-half(x, gray); }
+.bhtr_a { .border-half(topright, gray); }
+.bhtl_a { .border-half(topleft, gray); }
+.bhbr_a { .border-half(bottomright, gray); }
+.bhbl_a { .border-half(bottomleft, gray); }
 
 // 红色半边框
-.border_half_red {
-    .border-half(all, red);
-}
-.border_half_red_top {
-    .border-half(top, red);
-}
-.border_half_red_right {
-    .border-half(right, red);
-}
-.border_half_red_bottom {
-    .border-half(bottom, red);
-}
-.border_half_red_left {
-    .border-half(left, red);
-}
-.border_half_red_vertical {
-    .border-half(vertical, red);
-}
-.border_half_red_horizontal {
-    .border-half(horizontal, red);
-}
-.border_half_red_top_right {
-    .border-half(topright, red);
-}
-.border_half_red_top_left {
-    .border-half(topleft, red);
-}
-.border_half_red_bottom_right {
-    .border-half(bottomright, red);
-}
-.border_half_red_bottom_left {
-    .border-half(bottomleft, red);
-}
+.bh_b   { .border-half(all, red); }
+.bht_b  { .border-half(top, red); }
+.bhr_b  { .border-half(right, red); }
+.bhb_b  { .border-half(bottom, red); }
+.bhl_b  { .border-half(left, red); }
+.bhy_b  { .border-half(y, red); }
+.bhx_b  { .border-half(x, red); }
+.bhtr_b { .border-half(topright, red); }
+.bhtl_b { .border-half(topleft, red); }
+.bhbr_b { .border-half(bottomright, red); }
+.bhbl_b { .border-half(bottomleft, red); }
 
 // 黑色半边框
-.border_half_black {
-    .border-half(all, black);
-}
-.border_half_black_top {
-    .border-half(top, black);
-}
-.border_half_black_right {
-    .border-half(right, black);
-}
-.border_half_black_bottom {
-    .border-half(bottom, black);
-}
-.border_half_black_left {
-    .border-half(left, black);
-}
-.border_half_black_vertical {
-    .border-half(vertical, black);
-}
-.border_half_black_horizontal {
-    .border-half(horizontal, black);
-}
-.border_half_black_top_right {
-    .border-half(topright, black);
-}
-.border_half_black_top_left {
-    .border-half(topleft, black);
-}
-.border_half_black_bottom_right {
-    .border-half(bottomright, black);
-}
-.border_half_black_bottom_left {
-    .border-half(bottomleft, black);
-}
+.bh_c   { .border-half(all, black); }
+.bht_c  { .border-half(top, black); }
+.bhr_c  { .border-half(right, black); }
+.bhb_c  { .border-half(bottom, black); }
+.bhl_c  { .border-half(left, black); }
+.bhy_c  { .border-half(y, black); }
+.bhx_c  { .border-half(x, black); }
+.bhtr_c { .border-half(topright, black); }
+.bhtl_c { .border-half(topleft, black); }
+.bhbr_c { .border-half(bottomright, black); }
+.bhbl_c { .border-half(bottomleft, black); }
+
+// 蓝色半边框
+.bh_d   { .border-half(all, blue); }
+.bht_d  { .border-half(top, blue); }
+.bhr_d  { .border-half(right, blue); }
+.bhb_d  { .border-half(bottom, blue); }
+.bhl_d  { .border-half(left, blue); }
+.bhy_d  { .border-half(y, blue); }
+.bhx_d  { .border-half(x, blue); }
+.bhtr_d { .border-half(topright, blue); }
+.bhtl_d { .border-half(topleft, blue); }
+.bhbr_d { .border-half(bottomright, blue); }
+.bhbl_d { .border-half(bottomleft, blue); }
 
 
 // 全边框
 .border(@type: all, @color: gray) {
     border-width: 0;
-    border-color: @color;
-    border-style: solid;
 
-    & when (@type = vertical) {
+    & when (@color = gray) {
+        border-color: @border-gray;
+    }
+
+    & when (@color = red) {
+        border-color: @border-red;
+    }
+
+    & when (@color = black) {
+        border-color: @border-black;
+    }
+
+    & when (@color = blue) {
+        border-color: @border-blue;
+    }
+
+    & when (@type = y) {
         border-top-width: 1px;
         border-bottom-width: 1px;
     }
 
-    & when (@type = horizontal) {
+    & when (@type = x) {
         border-left-width: 1px;
         border-right-width: 1px;
     }
@@ -212,60 +178,37 @@
     & when (@type = all) {
         border-width: 1px;
     }
-}
-
-// 蓝色边框
-.border_blue {
-    .border(@type: all, @color: @color-blue);
-}
-.border_blue_top {
-    .border(@type: top, @color: @color-blue);
-}
-.border_blue_right {
-    .border(@type: right, @color: @color-blue);
-}
-.border_blue_bottom {
-    .border(@type: bottom, @color: @color-blue);
-}
-.border_blue_left {
-    .border(@type: left, @color: @color-blue);
+    
+    border-style: solid;
 }
 
 // 灰色边框
-.border_gray {
-    .border(@type: all, @color: @color-gray);
-}
-.border_gray_top {
-    .border(@type: top, @color: @color-gray);
-}
-.border_gray_right {
-    .border(@type: right, @color: @color-gray);
-}
-.border_gray_bottom {
-    .border(@type: bottom, @color: @color-gray);
-}
-.border_gray_left {
-    .border(@type: left, @color: @color-gray);
-}
+.b_a  { .border(all, gray); }
+.bt_a { .border(top, gray); }
+.br_a { .border(right, gray); }
+.bb_a { .border(bottom, gray); }
+.bl_a { .border(left, gray); }
 
-// 黑色边框
-.border_black {
-    .border(@type: all, @color: @color-black);
-}
-.border_black_top {
-    .border(@type: top, @color: @color-black);
-}
-.border_black_right {
-    .border(@type: right, @color: @color-black);
-}
-.border_black_bottom {
-    .border(@type: bottom, @color: @color-black);
-}
-.border_black_left {
-    .border(@type: left, @color: @color-black);
-}
+// 红色边框
+.b_b  { .border(all, red); }
+.bt_b { .border(top, red); }
+.br_b { .border(right, red); }
+.bb_b { .border(bottom, red); }
+.bl_b { .border(left, red); }
 
+// 红色边框
+.b_c  { .border(all, black); }
+.bt_c { .border(top, black); }
+.br_c { .border(right, black); }
+.bb_c { .border(bottom, black); }
+.bl_c { .border(left, black); }
 
+// 蓝色边框
+.b_d  { .border(all, blue); }
+.bt_d { .border(top, blue); }
+.br_d { .border(right, blue); }
+.bb_d { .border(bottom, blue); }
+.bl_d { .border(left, blue); }
 
 
 
