@@ -50,6 +50,14 @@
 
 
 /**
+ *
+ */
+.mod_scroll {
+    .scrollfix();
+    padding-top: 44px;
+}
+
+/**
  * box-sizing: border-box、
  */
  .box-sizing(@val) {
@@ -80,16 +88,6 @@
     -webkit-box-flex: 1;
 }
 
-
-
-/**
- * border-radius
- */
-.border_radius_3 {
-    .border-radius(3px);
-}
-
-
 /**
  * list
  */
@@ -113,6 +111,12 @@
     }
 }
 
+.list_ptb5 {
+    & > * {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
 .list_ptb10 {
     & > * {
         padding-top: 10px;
@@ -131,10 +135,35 @@
         padding-bottom: 20px;
     }
 }
+
+.list_plr5 {
+    & > * {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
 .list_plr10 {
     & > * {
         padding-left: 10px;
         padding-right: 10px;
+    }
+}
+.list_plr15 {
+    & > * {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+.list_plr20 {
+    & > * {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.list_p5 {
+    & > * {
+        padding: 5px;
     }
 }
 .list_p10 {
@@ -142,6 +171,17 @@
         padding: 10px;
     }
 }
+.list_p15 {
+    & > * {
+        padding: 15px;
+    }
+}
+.list_p20 {
+    & > * {
+        padding: 20px;
+    }
+}
+
 .list_db {
     & > * {
         display: block;
@@ -159,3 +199,20 @@
         .border_half_gray_bottom();
     }
 }
+
+.list_lh20 {
+    & > * {
+        line-height: 20px;
+    }
+}
+.list_lh30 {
+    & > * {
+        line-height: 30px;
+    }
+}
+.list_lh40 {
+    & > * {
+        line-height: 40px;
+    }
+}
+

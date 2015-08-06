@@ -3,8 +3,7 @@
  * gray 灰色边框
  * red: #ee374f 红色边框
  */
-
-.border-half(@path: all, @color: gray) {
+.border-half(@type: all, @color: gray) {
     border-width: 0;
 
     & when (@color = gray) {
@@ -15,40 +14,48 @@
         border-color: @border-red;
     }
 
-    & when (@path = vertical) {
+    & when (@color = black) {
+        border-color: #000;
+    }
+
+    & when (@color = blue) {
+        border-color: @border-blue;
+    }
+
+    & when (@type = vertical) {
         border-top-width: 1px;
         border-bottom-width: 1px;
     }
 
-    & when (@path = horizontal) {
+    & when (@type = horizontal) {
         border-left-width: 1px;
         border-right-width: 1px;
     }
 
-    & when (@path = top), (@path = right), (@path = bottom), (@path = left) {
-        border-@{path}-width: 1px;
+    & when (@type = top), (@type = right), (@type = bottom), (@type = left) {
+        border-@{type}-width: 1px;
     }
 
-    & when (@path = topright) {
+    & when (@type = topright) {
         border-top-width: 1px;
         border-right-width: 1px;
     }
 
-    & when (@path = topleft) {
+    & when (@type = topleft) {
         border-top-width: 1px;
         border-left-width: 1px;
     }
-    & when (@path = bottomright) {
+    & when (@type = bottomright) {
         border-right-width: 1px;
         border-bottom-width: 1px;
     }
 
-    & when (@path = bottomleft) {
+    & when (@type = bottomleft) {
         border-bottom-width: 1px;
         border-left-width: 1px;
     }
 
-    & when (@path = all) {
+    & when (@type = all) {
         border-width: 1px;
     }
 
@@ -125,4 +132,147 @@
 }
 .border_half_red_bottom_left {
     .border-half(bottomleft, red);
+}
+
+// 黑色半边框
+.border_half_black {
+    .border-half(all, black);
+}
+.border_half_black_top {
+    .border-half(top, black);
+}
+.border_half_black_right {
+    .border-half(right, black);
+}
+.border_half_black_bottom {
+    .border-half(bottom, black);
+}
+.border_half_black_left {
+    .border-half(left, black);
+}
+.border_half_black_vertical {
+    .border-half(vertical, black);
+}
+.border_half_black_horizontal {
+    .border-half(horizontal, black);
+}
+.border_half_black_top_right {
+    .border-half(topright, black);
+}
+.border_half_black_top_left {
+    .border-half(topleft, black);
+}
+.border_half_black_bottom_right {
+    .border-half(bottomright, black);
+}
+.border_half_black_bottom_left {
+    .border-half(bottomleft, black);
+}
+
+
+// 全边框
+.border(@type: all, @color: gray) {
+    border-width: 0;
+    border-color: @color;
+    border-style: solid;
+
+    & when (@type = vertical) {
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+    }
+
+    & when (@type = horizontal) {
+        border-left-width: 1px;
+        border-right-width: 1px;
+    }
+
+    & when (@type = top), (@type = right), (@type = bottom), (@type = left) {
+        border-@{type}-width: 1px;
+    }
+
+    & when (@type = topright) {
+        border-top-width: 1px;
+        border-right-width: 1px;
+    }
+
+    & when (@type = topleft) {
+        border-top-width: 1px;
+        border-left-width: 1px;
+    }
+    & when (@type = bottomright) {
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+    }
+
+    & when (@type = bottomleft) {
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+    }
+
+    & when (@type = all) {
+        border-width: 1px;
+    }
+}
+
+// 蓝色边框
+.border_blue {
+    .border(@type: all, @color: @color-blue);
+}
+.border_blue_top {
+    .border(@type: top, @color: @color-blue);
+}
+.border_blue_right {
+    .border(@type: right, @color: @color-blue);
+}
+.border_blue_bottom {
+    .border(@type: bottom, @color: @color-blue);
+}
+.border_blue_left {
+    .border(@type: left, @color: @color-blue);
+}
+
+// 灰色边框
+.border_gray {
+    .border(@type: all, @color: @color-gray);
+}
+.border_gray_top {
+    .border(@type: top, @color: @color-gray);
+}
+.border_gray_right {
+    .border(@type: right, @color: @color-gray);
+}
+.border_gray_bottom {
+    .border(@type: bottom, @color: @color-gray);
+}
+.border_gray_left {
+    .border(@type: left, @color: @color-gray);
+}
+
+// 黑色边框
+.border_black {
+    .border(@type: all, @color: @color-black);
+}
+.border_black_top {
+    .border(@type: top, @color: @color-black);
+}
+.border_black_right {
+    .border(@type: right, @color: @color-black);
+}
+.border_black_bottom {
+    .border(@type: bottom, @color: @color-black);
+}
+.border_black_left {
+    .border(@type: left, @color: @color-black);
+}
+
+
+
+
+
+.mod_line_order {
+    height: 10px;
+    overflow: hidden;
+    width: 100%;
+    background: url(images/order_bg.png) repeat-x 0 bottom;
+    background-size: 10px auto;
 }
