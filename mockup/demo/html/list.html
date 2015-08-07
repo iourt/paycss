@@ -10,9 +10,90 @@
     <!-- endinject -->
 </head>
 <body>
-    <h1 class="demo_h1" id="color">List</h1>
 
-    <ul class="mod_list_input mb10">
+<pre>
+列表布局:
+    列表布局是利用box属性来做的一种自适应布局，组成列表布局的有这些className可用：
+    
+    <em>li_box</em>
+    <i>其实在样式里我们还有一个box 类名，li_box 跟它的不同在于：box是作用本身，而li_box 是作用于子元素，可以举个例子</i>
+
+    &lt;ul class="box"&gt;
+        &lt;li&gt;
+            &lt;p&gt;1-1&lt;/p&gt;
+            &lt;p&gt;1-2&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;p&gt;2-1&lt;/p&gt;
+            &lt;p&gt;2-2&lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;ul class="li_box"&gt;
+        &lt;li&gt;
+            &lt;p&gt;1-1&lt;/p&gt;
+            &lt;p&gt;1-2&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;p&gt;2-1&lt;/p&gt;
+            &lt;p&gt;2-2&lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    <i>
+    1、box布局中两个 li 元素会在一行显示 各自的 p 元素会换行显示
+    2、li_box布局中两个 li 元素会换行显示，而各自的 p 元素会在同一行显示
+    </i>
+
+    <em>li_boxa</em>
+    <i>决定了垂直方向上的空间利用，也就是垂直居中，如果不加这个class默认为拉伸，也就是父标签高度过高，其孩子元素的高度就多高，跟box_ac的关系也如 box 跟 li_box 的关系</i>
+
+    <em>li_lh{var}</em>
+    <i>子元素行间距</i>
+    li_lh20
+    li_lh30
+    li_lh40
+
+    <em>li_p{var}</em>
+    <i>子元素padding值，距离上目前支持5,10,15,20, 位置上 支持Y轴、X轴、全部四个方向</i>
+    li_py5
+    li_py10
+    li_py15
+    li_py20
+
+    li_px5 
+    li_px10
+    li_px15
+    li_px20
+
+    li_p5
+    li_p10
+    li_p15
+    li_p20
+
+    <em>li_bhb_{color}</em>
+    <i>子元素边框色，目前就支持 底部半像素边框
+    a: 灰色
+    b: 红色
+    c: 蓝色
+    d: 黑色</i>
+    li_bhb_a
+    li_bhb_b
+    li_bhb_c
+    li_bhb_d
+
+    <em>li_bdn</em>
+    <i>作用就是设置list布局中最后一个元素不显示边框，一般只有在设置了li_bhb_{color}时候，才有可能用改类名</i>
+
+    <em>li_db</em>
+    <i>把子元素设置为块级元素（一个元素占一行）</i>
+
+    <em>li_dib</em>
+    <i>把子元素设置为内联元素 (元素不占一行，相互可以首位相接)</i>
+</pre>
+
+    <h1 class="demo_h1">List</h1>
+
+    <ul class="li_input mb10">
         <li>
             <label>卡号</label>
             <input type="text" placeholder="14-19位数字" />
@@ -20,7 +101,7 @@
         </li>
         <li>
             <label class="w_auto">发卡银行</label>
-            <p class="text_right icon_arrow_right box_flex"></p>
+            <p class="tr icon_ar ci_gray box_flex"></p>
         </li>
         <li>
             <label>姓名</label>
@@ -29,7 +110,7 @@
     </ul>
 
 
-    <dl class="mod_list_table mlr10">
+    <dl class="li_table mlr10">
         <dt>本人信用卡</dt>
         <dd>
             <ul>
@@ -48,7 +129,7 @@
     </dl>
 
 
-    <ul class="list_box list_box_align lh20 list_ptb15 list_border mlr10 border_half_gray_top">
+    <ul class="li_box li_boxa lh20 li_py15 li_bdb_a mlr10 bht_a">
         <li>
             <div class="w40 mr5 bank_abc"></div>
             <div class="box_flex">
@@ -85,6 +166,6 @@
     </ul>
 
 
-
+<br><br><br><br><br>
 </body>
 </html>

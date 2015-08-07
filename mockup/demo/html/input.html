@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>APP HTML</title>
+    <script type="text/javascript" src="zepto.min.js"></script>
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../source/all.css">
+    <!-- endinject -->
+</head>
+<body>
+
+<pre>
+input样式:
+    基础类名: input
+</pre>
+
+    <h1 class="demo_h1">input</h1>
+
+    <input class="input bg_gray" type="text" maxlength="3" placeholder="卡背面末三位数字" />
+
+    <input class="input bhb_a" type="text" placeholder="提示语言" />
+
+
+    <h2 class="demo_h2">input password</h2>
+    <div class="w300">
+        <div class="ip_pa js_input">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <input data-type="dot" type="password" />
+        </div>
+    </div>
+
+    <h2 class="demo_h2">input password</h2>
+    <div class="w300">
+        <div class="ip_pb js_input">
+            <ul class="">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <input data-type="dot" type="password" />
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+        var $input = $('.js_input input');
+
+        $('input').on('click', function (e) {
+            $('.js_input ul').removeClass('focus');
+
+            if ($(this).data('type') == 'dot') {
+                var $that = $(this).parent('.js_input').find('ul'),
+                    cname = $that.attr('class');
+
+                if(!/focus/.test(cname)) {
+                    $that.addClass('focus');
+                }
+
+                if(!/dot/.test(cname)) {
+                    $that.addClass('dot0');
+                }
+            }
+        });
+
+        // $input.on('click', function (e) {
+        //     var $that = $(this).parent('.js_input').find('ul');
+
+        //     if ($that.hasClass('focus')) {
+        //         return;
+        //     }
+        //     $that.attr('class', 'focus');
+        // });
+
+        $input.on('change input', function (e) {
+            var text = $(this).val(),
+                len = text.length,
+                $that = $(this).parent('.js_input').find('ul');
+
+            if (len > 6) {
+                len = 6;
+
+                $(this).val(text.slice(0, 6));
+            }
+            $that.attr('class', 'dot'+len+ ' focus');
+        });
+
+    </script>
+
+<br><br><br><br><br>
+</body>
+</html>

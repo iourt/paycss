@@ -10,79 +10,159 @@
     <!-- endinject -->
 </head>
 <body>
-    
-    <h1 class="demo_h1" id="header">Border</h1>
 
+<pre>
+画边框单词简写拼装className说明：
+    top:        t
+    right:      r
+    bottom:     b
+    left:       l
+    top-bottom: y
+    left-right: x
+    border:     b
+    half:       h
+    a:          灰色
+    b:          红色
+    c:          黑色
+    d:          蓝色
+举例：
+    bh_a:  <i>半像素灰色全边框（&lt;div class="bh_a"&gt;&lt;/div&gt;）</i>
+    bhy_b: <i>半像素红色上下边框（&lt;div class="bhy_b"&gt;&lt;/div&gt;）</i>
+    bhl_c: <i>半像素黑色左边框（&lt;div class="bhl_c"&gt;&lt;/div&gt;）</i>
+    bl_d:  <i>1像素蓝色左边框（&lt;div class="bl_d"&gt;&lt;/div&gt;）</i>
+    b_a:   <i>1像素灰色全边框（&lt;div class="b_a"&gt;&lt;/div&gt;）</i>
+
+圆角边框单词简写说明：
+    border-radius: bdr
+目前只定义了四角都是圆角的情况，3px\5px\10px
+    bdr_3
+    bdr_5
+    bdr_10
+</pre>
+
+
+    <h1 class="demo_h1">圆角边框</h1>
+
+    <div class="w100 bdr_3 bg_gray f16 lh40 tc dib mr10">bdr_3</div>
+    <div class="w100 bdr_5 bg_gray f16 lh40 tc dib mr10">bdr_5</div>
+    <div class="w100 bdr_10 bg_gray f16 lh40 tc dib mr10">bdr_10</div>
+
+    
+    <h1 class="demo_h1" id="border">0.5px 边框</h1>
     <ul class="demo_border">
-        <li class="border_half_gray">
-            border_half_gray
-        </li>
-        <li class="border_half_gray_top">
-            border_half_gray_top
-        </li>
-        <li class="border_half_gray_bottom">
-            border_half_gray_bottom
-        </li>
-        <li class="border_half_gray_left">
-            border_half_gray_left
-        </li>
-        <li class="border_half_gray_right">
-            border_half_gray_right
-        </li>
-        <li class="border_half_gray_vertical">
-            border_half_gray_vertical
-        </li>
-        <li class="border_half_gray_horizontal">
-            border_half_gray_horizontal
-        </li>
-        <li class="border_half_gray_top_right">
-            border_half_gray_top_right
-        </li>
-        <li class="border_half_gray_top_left">
-            border_half_gray_top_left
-        </li>
-        <li class="border_half_gray_bottom_right">
-            border_half_gray_bottom_right
-        </li>
-        <li class="border_half_gray_bottom_left">
-            border_half_gray_bottom_left
-        </li>
+        <li class="bh_a">bh_a</li>
+        <li class="bht_a">bht_a</li>
+        <li class="bhr_a">bhr_a</li>
+        <li class="bhb_a">bhb_a</li>
+        <li class="bhl_a">bhl_a</li>
+        <li class="bhy_a">bhy_a</li>
+        <li class="bhx_a">bhx_a</li>
+        <li class="bhtr_a">bhtr_a</li>
+        <li class="bhtl_a">bhtl_a</li>
+        <li class="bhbr_a">bhbr_a</li>
+        <li class="bhbl_a">bhbl_a</li>
 
         <br>
 
-        <li class="border_half_red">
-            border_half_red
-        </li>
-        <li class="border_half_red_top">
-            border_half_red_top
-        </li>
-        <li class="border_half_red_bottom">
-            border_half_red_bottom
-        </li>
-        <li class="border_half_red_left">
-            border_half_red_left
-        </li>
-        <li class="border_half_red_right">
-            border_half_red_right
-        </li>
-        <li class="border_half_red_vertical">
-            border_half_red_vertical
-        </li>
-        <li class="border_half_red_horizontal">
-            border_half_red_horizontal
-        </li>
-        <li class="border_half_red_top_right">
-            border_half_red_top_right
-        </li>
-        <li class="border_half_red_top_left">
-            border_half_red_top_left
-        </li>
-        <li class="border_half_red_bottom_right">
-            border_half_red_bottom_right
-        </li>
-        <li class="border_half_red_bottom_left">
-            border_half_red_bottom_left
-        </li>
+        <li class="bh_b">bh_b</li>
+        <li class="bht_b">bht_b</li>
+        <li class="bhr_b">bhr_b</li>
+        <li class="bhb_b">bhb_b</li>
+        <li class="bhl_b">bhl_b</li>
+        <li class="bhy_b">bhy_b</li>
+        <li class="bhx_b">bhx_b</li>
+        <li class="bhtr_b">bhtr_b</li>
+        <li class="bhtl_b">bhtl_b</li>
+        <li class="bhbr_b">bhbr_b</li>
+        <li class="bhbl_b">bhbl_b</li>
+
+        <br>
+
+        <li class="bh_c">bh_c</li>
+        <li class="bht_c">bht_c</li>
+        <li class="bhr_c">bhr_c</li>
+        <li class="bhb_c">bhb_c</li>
+        <li class="bhl_c">bhl_c</li>
+        <li class="bhy_c">bhy_c</li>
+        <li class="bhx_c">bhx_c</li>
+        <li class="bhtr_c">bhtr_c</li>
+        <li class="bhtl_c">bhtl_c</li>
+        <li class="bhbr_c">bhbr_c</li>
+        <li class="bhbl_c">bhbl_c</li>
+
+        <br>
+
+        <li class="bh_d">bh_d</li>
+        <li class="bht_d">bht_d</li>
+        <li class="bhr_d">bhr_d</li>
+        <li class="bhb_d">bhb_d</li>
+        <li class="bhl_d">bhl_d</li>
+        <li class="bhy_d">bhy_d</li>
+        <li class="bhx_d">bhx_d</li>
+        <li class="bhtr_d">bhtr_d</li>
+        <li class="bhtl_d">bhtl_d</li>
+        <li class="bhbr_d">bhbr_d</li>
+        <li class="bhbl_d">bhbl_d</li>
     </ul>
+
+
+    <h1 class="demo_h1">1px 边框</h1>
+    <ul class="demo_border">
+        <li class="b_a">b_a</li>
+        <li class="bt_a">bt_a</li>
+        <li class="br_a">br_a</li>
+        <li class="bb_a">bb_a</li>
+        <li class="bl_a">bl_a</li>
+        <li class="by_a">by_a</li>
+        <li class="bx_a">bx_a</li>
+        <li class="btr_a">btr_a</li>
+        <li class="btl_a">btl_a</li>
+        <li class="bbr_a">bbr_a</li>
+        <li class="bbl_a">bbl_a</li>
+
+        <br>
+
+        <li class="b_b">b_b</li>
+        <li class="bt_b">bt_b</li>
+        <li class="br_b">br_b</li>
+        <li class="bb_b">bb_b</li>
+        <li class="bl_b">bl_b</li>
+        <li class="by_b">by_b</li>
+        <li class="bx_b">bx_b</li>
+        <li class="btr_b">btr_b</li>
+        <li class="btl_b">btl_b</li>
+        <li class="bbr_b">bbr_b</li>
+        <li class="bbl_b">bbl_b</li>
+
+        <br>
+
+        <li class="b_c">b_c</li>
+        <li class="bt_c">bt_c</li>
+        <li class="br_c">br_c</li>
+        <li class="bb_c">bb_c</li>
+        <li class="bl_c">bl_c</li>
+        <li class="by_c">by_c</li>
+        <li class="bx_c">bx_c</li>
+        <li class="btr_c">btr_c</li>
+        <li class="btl_c">btl_c</li>
+        <li class="bbr_c">bbr_c</li>
+        <li class="bbl_c">bbl_c</li>
+
+        <br>
+
+        <li class="b_d">b_d</li>
+        <li class="bt_d">bt_d</li>
+        <li class="br_d">br_d</li>
+        <li class="bb_d">bb_d</li>
+        <li class="bl_d">bl_d</li>
+        <li class="by_d">by_d</li>
+        <li class="bx_d">bx_d</li>
+        <li class="btr_d">btr_d</li>
+        <li class="btl_d">btl_d</li>
+        <li class="bbr_d">bbr_d</li>
+        <li class="bbl_d">bbl_d</li>
+    </ul>
+
+<br><br><br><br><br>
 </body>
 </html>

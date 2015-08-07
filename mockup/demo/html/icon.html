@@ -10,9 +10,28 @@
     <!-- endinject -->
 </head>
 <body>
+
+<pre>
+icon样式:
+    一般icon className 都是以icon_开头，银行类icon都是以 bank_ 开头
+    icon_开头的icon都是字体，可以改变颜色大小，字体都是写在伪类 :before content 属性中，改变icon的颜色用到的样式是：
+
+    <em>ci_{color}</em>
+    {
+        ci_white
+        ci_black
+        ci_blue
+        ci_red
+        ci_orange
+        ci_gray
+        ci_dgrad
+        ci_black
+    }
+    目前就上面的这几种色，后面根据业务情况增加，具体className对应上面色值其实可以去参考<a href="color.html">color.html</a>
+</pre>
     
-    <h1 class="demo_h1" id="icon">Icon</h1>
-    
+
+    <h1 class="demo_h1">字体icon icon_{var}</h1>
     <ul class="demo_icon text_center">
         <li class="icon_back">icon_back</li>
         <li class="icon_al">icon_al</li>
@@ -22,7 +41,7 @@
         <li class="icon_ab">icon_ab</li>
         <li class="icon_ok">icon_ok</li>
         <li class="icon_clear">icon_clear</li>
-        <li class="icon_circle">icon_circle</li>
+        <li class="icon_dot">icon_dot</li>
         <li class="icon_sum">icon_sum</li>
         <li class="icon_close">icon_close</li>
         <li class="icon_help">icon_help</li>
@@ -30,6 +49,7 @@
     </ul>
 
 
+    <h1 class="demo_h1">银行图标 bank_{var}</h1>
     <ul class="demo_icon text_center">
         <li class="bank_alipay">bank_alipay<p>支付宝</p></li>
         <li class="bank_bill">bank_bill<p>块钱</p></li>
@@ -84,5 +104,7 @@
         <li class="bank_xmccb">bank_xmccb<p>厦门银行</p></li>
         <li class="bank_suzb">bank_suzb<p>苏州银行</p></li>
     </ul>
+
+<br><br><br><br><br>
 </body>
 </html>

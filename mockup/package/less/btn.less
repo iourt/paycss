@@ -1,4 +1,4 @@
-﻿.button (@display: block, @height: 40px, @bgcolor: #eee, @color: #000) {
+﻿.button (@display: block, @height: 40px, @bgcolor: #eee, @color: #000, @font: 16) {
     display: @display;
     border: 0;
     text-align: center;
@@ -7,7 +7,8 @@
     margin: 0 auto;
     background: @bgcolor;
     color: @color;
-    .font-size(16);
+    .font-size(@font);
+    cursor: pointer;
 }
 
 .btn {

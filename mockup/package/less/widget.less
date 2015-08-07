@@ -23,8 +23,14 @@
 .pos_f { position: fixed !important; }
 .pos_a { position: absolute !important; }
 .pos_r { position: relative !important; }
-.oneline    { white-space: nowrap !important; } // 文字保持一行不换行
-.ellipsis   { .ellipsis(); } // 单行文字显示省略号...
+.pos_i { position: inherit !important; }
+
+.oneline   { white-space: nowrap !important; } // 文字保持一行不换行
+.wordbreak { // 强行换行
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.ellipsis  { .ellipsis(); } // 单行文字显示省略号...
 
 /**
  * font
@@ -38,8 +44,8 @@
 /**
  * display: inline-block、block
  */
-.dib { display: inline-block !important; }
-.db  { display: block !important; }
+.dib    { display: inline-block !important; }
+.db     { display: block !important; }
 .d_hide { display: none !important; }
 .d_show { display: block !important; }
 
@@ -69,8 +75,8 @@
 .box_border { //border和padding计算入width之内，其实就是怪异模式
     .box-sizing(border-box);
 }
-.box_padding { //padding计算入width内
-    .box-sizing(padding-box);
+.box_content { //padding计算入width内
+    .box-sizing(content-box);
 }
 
 
@@ -83,92 +89,20 @@
         display: block;
     }
 }
-.box_align {
-    -webkit-box-align: center; 
-}
+.box_ac { -webkit-box-align: center; }
+.box_as { -webkit-box-align: stretch; }
 .box_flex {
     width: 0;
     -webkit-box-flex: 1;
 }
 
-/**
- * list
- */
 
-// list-line-height
-.list-line-height (@h: 30px) {
-    & > * {
-        line-height: @h;
-    }
-}
-.li_lh20{ .list-line-height(20px); }
-.li_lh30{ .list-line-height(); }
-.li_lh40{ .list-line-height(40px); }
 
-// list box
-.li_box {
-    & > * {
-        .box();
-    }
+// 特殊边框
+.mod_bd {
+    height: 10px;
+    overflow: hidden;
+    width: 100%;
+    background: url(images/order_bg.png) repeat-x 0 bottom;
+    background-size: 10px auto;
 }
-.li_boxa {
-    & > * {
-        .box_align();
-    }
-}
-
-// list padding
-.list-padding (@type: all, @dist: 5px) {
-    & > * {
-        & when (@type = all) {
-            padding: @dist;
-        }
-        & when (@type = y) {
-            padding-top: @dist;
-            padding-bottom: @dist;
-        }
-        & when (@type = x) {
-            padding-left: @dist;
-            padding-right: @dist;
-        }
-    }
-}
-.li_py5  { .list-padding (@type: y, @dist: 5px)}
-.li_py10 { .list-padding (@type: y, @dist: 10px)}
-.li_py15 { .list-padding (@type: y, @dist: 15px)}
-.li_py20 { .list-padding (@type: y, @dist: 20px)}
-
-.li_px5  { .list-padding (@type: x, @dist: 5px)}
-.li_px10 { .list-padding (@type: x, @dist: 10px)}
-.li_px15 { .list-padding (@type: x, @dist: 15px)}
-.li_px20 { .list-padding (@type: x, @dist: 20px)}
-
-.li_p5   { .list-padding (@type: all, @dist: 5px)}
-.li_p10  { .list-padding (@type: all, @dist: 10px)}
-.li_p15  { .list-padding (@type: all, @dist: 15px)}
-.li_p20  { .list-padding (@type: all, @dist: 20px)}
-
-// list display: block/inline-block
-.li_db {
-    & > * {
-        display: block;
-    }
-}
-.li_dib {
-    font-size: 0;
-    & > * {
-        .font-size();
-        display: inline-block;
-    }
-}
-
-// list border
-.list-border (@type: bottom, @color: gray) {
-    & > * {
-        .border-half(@type, @color);
-    }
-}
-.li_bd_a { .list-border(bottom, gray); }
-.li_bd_b { .list-border(bottom, red); }
-.li_bd_c { .list-border(bottom, black); }
-.li_bd_d { .list-border(bottom, blue); }

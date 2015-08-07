@@ -1,69 +1,103 @@
-﻿.li_input {
-    li {
-        padding: 10px;
-        .border-half(bottom);
-        display: -webkit-box;
-        -webkit-box-align: center;
-        .font-size(16);
-        color: @color-dgray;
-        label,
-        input,
-        p {
-            display: block;
-        }
-        label {
-            width: 100px;
-            font-weight: bold;
-            color: #000;
-        }
-        input {
-            width: 0;
-            border: 0;
-            outline: none;
-            height: 40px;
-            .font-size(16);
-            color: @color-dgray;
-            -webkit-box-flex: 1;
-        }
-        p {
-            width: 50px;
-            text-align: center;
-        }
-
-        .icon_arrow_right {
-            &:before {
-                color: @color-gray;
-            }
-        }
+﻿/**
+ * list
+ * list > li -- line-height
+ * list > li > div -- display:-webkit-box;
+ * list > li > div -- -webkit-box-align: center;
+ */
+// box
+.li_box {
+    & > * {
+        .box();
+    }
+}
+.li_boxa {
+    & > * {
+        .box_ac();
     }
 }
 
 
-.li_table {
-    dt {
-        line-height: 50px;
-        text-align: center;
-        .font-size(18);
-        .fb();
-        .bg_gray();
+// line-height
+.list-line-height (@h: 30px) {
+    & > * {
+        line-height: @h;
     }
-    dd {
-        .border-half();
-        ul {
-            .border-half(bottom);
-            .box();
-            li {
-                padding: 15px;
-                width: 0;
-                line-height: 20px;
-                -webkit-box-flex: 1;
-                &:nth-child(even) {
-                    .border-half(left);
-                }
-            }
-            &:last-child {
-                border-bottom: 0;
-            }
+}
+.li_lh20 { .list-line-height(20px); }
+.li_lh30 { .list-line-height(); }
+.li_lh40 { .list-line-height(40px); }
+
+
+// padding
+.list-padding (@type: all, @dist: 5px) {
+    & > * {
+        & when (@type = all) {
+            padding: @dist;
+        }
+        & when (@type = y) {
+            padding-top: @dist;
+            padding-bottom: @dist;
+        }
+        & when (@type = x) {
+            padding-left: @dist;
+            padding-right: @dist;
+        }
+    }
+}
+.li_py5  { .list-padding (@type: y, @dist: 5px)}
+.li_py10 { .list-padding (@type: y, @dist: 10px)}
+.li_py15 { .list-padding (@type: y, @dist: 15px)}
+.li_py20 { .list-padding (@type: y, @dist: 20px)}
+
+.li_px5  { .list-padding (@type: x, @dist: 5px)}
+.li_px10 { .list-padding (@type: x, @dist: 10px)}
+.li_px15 { .list-padding (@type: x, @dist: 15px)}
+.li_px20 { .list-padding (@type: x, @dist: 20px)}
+
+.li_p5   { .list-padding (@type: all, @dist: 5px)}
+.li_p10  { .list-padding (@type: all, @dist: 10px)}
+.li_p15  { .list-padding (@type: all, @dist: 15px)}
+.li_p20  { .list-padding (@type: all, @dist: 20px)}
+
+
+// display: block/inline-block
+.li_db {
+    & > * {
+        display: block;
+    }
+}
+.li_dib {
+    font-size: 0;
+    & > * {
+        .font-size();
+        display: inline-block;
+    }
+}
+
+
+// border
+.list-border (@type: bottom, @color: gray, @class: half) {
+    & > * {
+        & when (@class = half) {
+            .border-half(@type, @color);
+        }
+        & when (@class = all) {
+            .border(@type, @color);
+        }
+    }
+}
+.li_bdb_a { .list-border(bottom, gray); }
+.li_bdb_b { .list-border(bottom, red); }
+.li_bdb_c { .list-border(bottom, black); }
+.li_bdb_d { .list-border(bottom, blue); }
+
+
+// last-child none border
+.li_bdn {
+    & > * {
+        &:last-child {
+            border: 0;
+            border: none;
         }
     }
 }

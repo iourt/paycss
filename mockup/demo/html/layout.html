@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>APP HTML</title>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../source/all.css">
+    <!-- endinject -->
+</head>
+<body>
+
+<pre>
+零碎的组件布局:
+
+浮动布局
+    <em>fl</em>       <i>左浮动</i>
+    <em>fr</em>       <i>右浮动</i>
+    <em>clearfix</em> <i>清除浮动</i>
+
+块、内联元素
+    <em>dib</em> <i>块级元素 最直观的表现在元素占一行</i>
+    <em>db</em>  <i>内联元素 与块级相反</i>
+
+元素显示隐藏
+    <em>d_hide</em> <i>隐藏</i>
+    <em>d_show</em> <i>显示</i>
+
+元素布局定位 pos: position; s: static; f: fixed; a: absolute; r: relative; i: inherit
+    <em>pos_s</em> <i>static 默认值。没有定位，元素出现在正常的流中</i>
+    <em>pos_f</em> <i>固顶定位，相对于浏览器窗口进行定位</i>
+    <em>pos_a</em> <i>绝对定位，相对于 static 定位以外的第一个父元素进行定位</i>
+    <em>pos_r</em> <i>相对定位，相对于其正常位置进行定位</i>
+    <em>pos_i</em> <i>继承定位，从父元素继承 position 属性的值</i>
+    定位的位置直接写 style（left、top、right、bottom、z-index）
+
+box-sizing
+    <em>box_border</em>  <i>border和padding计算入width之内，其实就是怪异模式</i>
+    <em>box_content</em> <i>默认值 不包括border和padding</i>
+
+box
+    <em>box</em>      <i>元素转成box布局</i>
+    <em>box_ac</em>   <i>垂直方向上的空间利用，也就是垂直居中</i>
+    <em>box_flex</em> <i>根据父元素的剩余空间分成</i>
+
+订单特殊边框
+    <em>mod_bd</em>
+</pre>
+
+
+
+    <h1 class="demo_h1">box-sizing</h1>
+
+    <div style="border:5px solid red;" class="w200 p20 bg_black f14 cl_white mb10">无</div>
+    <div style="border:5px solid red;" class="w200 p20 bg_black f14 cl_white mb10 box_border">box_border</div>
+    <div style="border:5px solid red;" class="w200 p20 bg_black f14 cl_white mb10 box_content">box_content</div>
+
+
+
+
+    <h1 class="demo_h1">box</h1>
+
+    <h2 class="demo_h2">没用使用box</h2>
+<pre class="demo_pre">
+&lt;ul class="f14 li_p10 li_lh20"&gt;
+    &lt;li class="w100 bg_gray"&gt;第一个布局测试代码&lt;/li&gt;
+    &lt;li class="w100 bg_orange"&gt;第二个布局测试代码第二个布局测试代码第二个布局测试代码第二个布局测试代码&lt;/li&gt;
+    &lt;li class="w100 bg_blue"&gt;第三个布局测试代码&lt;/li&gt;
+&lt;/ul&gt;
+布局中有一些辅助效果显示的类
+</pre>
+    <ul class="f14 li_p10 li_lh20">
+        <li class="w100 bg_gray">第一个布局测试代码</li>
+        <li class="w100 bg_orange">第二个布局测试代码第二个布局测试代码第二个布局测试代码第二个布局测试代码</li>
+        <li class="w100 bg_blue">第三个布局测试代码</li>
+    </ul>
+
+
+    <h2 class="demo_h2">使用box</h2>
+<pre class="demo_pre">
+&lt;ul class="f14 li_p10 li_lh20 <i>box</i>"&gt;
+    &lt;li class="w100 bg_gray"&gt;第一个布局测试代码&lt;/li&gt;
+    &lt;li class="w100 bg_orange"&gt;第二个布局测试代码第二个布局测试代码第二个布局测试代码第二个布局测试代码&lt;/li&gt;
+    &lt;li class="w100 bg_blue"&gt;第三个布局测试代码&lt;/li&gt;
+&lt;/ul&gt;
+布局中有一些辅助效果显示的类
+</pre>
+    <ul class="f14 li_p10 li_lh20 box">
+        <li class="w100 bg_gray">第一个布局测试代码</li>
+        <li class="w100 bg_orange">第二个布局测试代码第二个布局测试代码第二个布局测试代码第二个布局测试代码</li>
+        <li class="w100 bg_blue">第三个布局测试代码</li>
+    </ul>
+
+
+
+    <h2 class="demo_h2">使用box、box_ac</h2>
+<pre class="demo_pre">
+&lt;ul class="f14 li_p10 <i>box box_ac</i>"&gt;
+    &lt;li class="w100 bg_gray"&gt;第一个布局测试代码&lt;/li&gt;
+    &lt;li class="w100 bg_orange"&gt;第二个布局测试代码第二个布局测试代码第二个布局测试代码第二个布局测试代码&lt;/li&gt;
+    &lt;li class="w100 bg_blue"&gt;第三个布局测试代码&lt;/li&gt;
+&lt;/ul&gt;
+布局中有一些辅助效果显示的类
+</pre>
+    <ul class="f14 li_p10 box box_ac">
+        <li class="w100 bg_gray">第一个布局测试代码</li>
+        <li class="w100 bg_orange">第二个布局测试代码第二个布局测试代码第二个布局测试代码第二个布局测试代码</li>
+        <li class="w100 bg_blue">第三个布局测试代码</li>
+    </ul>
+
+
+
+    <h2 class="demo_h2">使用box、box_flex 左右自适应</h2>
+<pre class="demo_pre">
+&lt;ul class="f14 li_p10 <i>box</i>"&gt;
+    &lt;li class="bg_gray"&gt;第一个布局测试代码&lt;/li&gt;
+    &lt;li class="bg_orange <i>box_flex</i>"&gt;第二个布局测试代码第二个布局测试代码第二个布局测试代码第二个布局测试代码&lt;/li&gt;
+    &lt;li class="bg_blue"&gt;第三个布局测试代码&lt;/li&gt;
+&lt;/ul&gt;
+布局中有一些辅助效果显示的类
+</pre>
+    <ul class="f14 li_p10 box">
+        <li class="bg_gray">第一个布局测试代码</li>
+        <li class="bg_orange box_flex">第二个布局测试代码第二个布局测试代码第二个布局测试代码第二个布局测试代码</li>
+        <li class="bg_blue">第三个布局测试代码</li>
+    </ul>
+
+
+
+    <h2 class="demo_h2">使用box、box_flex 左右固定宽度</h2>
+<pre class="demo_pre">
+&lt;ul class="f14 li_p10 <i>box</i>"&gt;
+    &lt;li class="bg_gray"&gt;第一个布局测试代码&lt;/li&gt;
+    &lt;li class="bg_orange <i>box_flex</i>"&gt;第二个布局测试代码第二个布局测试代码第二个布局测试代码第二个布局测试代码&lt;/li&gt;
+    &lt;li class="bg_blue"&gt;第三个布局测试代码&lt;/li&gt;
+&lt;/ul&gt;
+布局中有一些辅助效果显示的类
+</pre>
+    <ul class="f14 li_p10 box">
+        <li class="w200 bg_gray">第一个布局测试代码</li>
+        <li class="bg_orange box_flex">第二个布局测试代码第二个布局测试代码第二个布局测试代码第二个布局测试代码</li>
+        <li class="w300 bg_blue">第三个布局测试代码</li>
+    </ul>
+
+
+
+    <h1 class="demo_h1">mod_bd</h1>
+<pre class="demo_pre">
+&lt;div class="<i>mod_bd</i>"&gt;&lt;/div&gt;
+</pre>
+    <div class="mod_bd"></div>
+
+<br><br><br><br><br>
+</body>
+</html>

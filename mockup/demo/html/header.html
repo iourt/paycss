@@ -11,6 +11,18 @@
 </head>
 <body>
 
+<pre>
+顶部通用式样:
+    基础组合布局className为mod_header, 布局主要分 左 中 右 三部分组成。左边是 返回按钮，按钮的样式可以去调用icon布局<i>（icon_back 等等，具体的icon可以看<a href="icon.html">icon.html</a>）；中间是标题文字，超出部分会用省略号<i>(...)</i>来隐藏显示</i>；右边是按钮布局，没有按钮也请留空div布局<i>(&lt;div&gt;&lt;/div&gt;)</i>
+
+    &lt;header class="mod_header"&gt;
+        &lt;p class="icon_back"&gt;&lt;/p&gt;
+        &lt;h1&gt;这里是标题，文字过多自动截取（带省略号...）&lt;/h1&gt;
+        &lt;div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+</pre>
+
     <h1 class="demo_h1" id="header">Header</h1>
     
     <div class="demo_header">
@@ -18,15 +30,15 @@
             <p class="icon_back"></p>
             <h1>这里是标题，文字过多自动截取（带省略号...）</h1>
             <div>
-                <button class="button">按钮</button>
+                <button class="btn">按钮</button>
             </div>
         </header>
 
         <header class="mod_header">
-            <p class="icon_arrow_left"></p>
+            <p class="icon_al"></p>
             <h1>这里是标题</h1>
             <div>
-                <button class="button">按钮</button>
+                <button class="btn">按钮</button>
             </div>
         </header>
 
@@ -37,24 +49,25 @@
         </header>
 
         <header class="mod_header bg_blue">
-            <p class="icon_arrow_back"></p>
+            <p class="icon_ab"></p>
             <h1>这里是标题</h1>
-            <div class="icon_menu"></div>
+            <div></div>
         </header>
 
 
         <header class="mod_header bg_gray">
-            <p class="icon_arrow_left"></p>
-            <h1 class="color_black">这里是标题</h1>
+            <p class="icon_al ci_blue"></p>
+            <h1 class="cl_black">这里是标题</h1>
             <div></div>
         </header>
 
         <header class="mod_header bg_dgray">
-            <p class="icon_arrow_back"></p>
+            <p class="icon_ab"></p>
             <h1>这里是标题</h1>
             <div></div>
         </header>
     </div>
 
+<br><br><br><br><br>
 </body>
 </html>

@@ -4,10 +4,147 @@
  * 一般行高为   88px  60px
  * 常用高度有   88px  120px
  */
-.input(@height: 60px) {
+.input(@height: 30px) {
     outline: none;
     margin: 0 auto;
     line-height: @height;
     border: 0;
-    .border-half();
+    padding: 0;
+}
+
+.input {
+    .input();
+}
+
+// 密码输入效果布局
+.li-dot(@n) {
+    li {
+        &:nth-child(@{n}):before {
+            display: inline-block !important;
+        }
+    }
+}
+.dot1,
+.dot2,
+.dot3,
+.dot4,
+.dot5,
+.dot6,
+.dot7,
+.dot8{
+    .li-dot(1);
+}
+.dot2,
+.dot3,
+.dot4,
+.dot5,
+.dot6,
+.dot7,
+.dot8{ .li-dot(2); }
+.dot3,
+.dot4,
+.dot5,
+.dot6,
+.dot7,
+.dot8{ .li-dot(3); }
+.dot4,
+.dot5,
+.dot6,
+.dot7,
+.dot8{ .li-dot(4); }
+.dot5,
+.dot6,
+.dot7,
+.dot8{ .li-dot(5); }
+.dot6,
+.dot7,
+.dot8{ .li-dot(6); }
+.dot7,
+.dot8{ .li-dot(7); }
+.dot8{ .li-dot(8); }
+
+///-------
+.li-dot-animte(@n) {
+    li {
+        @a: @n + 1;
+        &:nth-child(@{a}):after {
+            content: "|";
+            line-height: 40px;
+            -webkit-animation: dot-animate 0.5s ease-in-out infinite;
+        }
+    }
+}
+@keyframes dot-animate {
+    0%   { color: rgba(0, 0, 0, 1); }
+    100% { color: rgba(0, 0, 0, 0); }
+}
+.dot0.focus { .li-dot-animte(0); }
+.dot1.focus { .li-dot-animte(1); }
+.dot2.focus { .li-dot-animte(2); }
+.dot3.focus { .li-dot-animte(3); }
+.dot4.focus { .li-dot-animte(4); }
+.dot5.focus { .li-dot-animte(5); }
+.dot6.focus { .li-dot-animte(6); }
+.dot7.focus { .li-dot-animte(7); }
+.dot8.focus { .li-dot-animte(8); }
+
+.ip_pa {
+    position: relative;
+    ul {
+        pointer-events: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #eee;
+        .box();
+        .box_ac();
+        li {
+            text-align: center;
+            .box_flex();
+            .icon(@font: e601, @size: 16, @color: #000, @block: none);
+        }
+    }
+    input {
+        .input(@height: 20px);
+        width: 100%;
+        padding: 10px 0;
+        background: #eee;
+        color: #eee;
+    }
+}
+
+.ip_pb {
+    position: relative;
+    ul {
+        pointer-events: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        .box();
+        li {
+            text-align: center;
+            margin-right: 5px;
+            background: #eee;
+            .box_flex();
+            .icon(@font: e601, @size: 16, @color: #000, @block: none);
+            &:last-child {
+                margin-right: 0;
+            }
+            &:before {
+                line-height: 40px;
+            }
+            .border-half();
+        }
+    }
+    input {
+        .input(@height: 20px);
+        width: 100%;
+        padding: 10px 0;
+        background: rgba(0,0,0,0);
+        color: rgba(0,0,0,0);
+    }
 }

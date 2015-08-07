@@ -12,30 +12,34 @@
 <body>
 
     <div id="tab_menu" class="js_menu demo_app_menu">
-        <div class="js_icon icon_arrow_left"></div>
+        <div class="js_icon icon_al"></div>
 
         <ul class="js_list">
-            <li><a target="right" href="color.html#tab_menu">Color</a></li>
-            <li><a target="right" href="header.html#tab_menu">Header</a></li>
-            <li><a target="right" href="icon.html#tab_menu">Icon</a></li>
-            <li><a target="right" href="border.html#tab_menu">Border</a></li>
-            <li><a target="right" href="font.html#tab_menu">Text-align、Font</a></li>
-            <li><a target="right" href="button.html#tab_menu">Button</a></li>
-            <li><a target="right" href="tab.html#tab_menu">Tab</a></li>
-            <li><a target="right" href="list.html#tab_menu">List</a></li>
+            <li><a target="right" href="color.html#tab_menu">颜色</a></li>
+            <li><a target="right" href="header.html#tab_menu">顶部布局</a></li>
+            <li><a target="right" href="icon.html#tab_menu">icon</a></li>
+            <li><a target="right" href="border.html#tab_menu">边框</a></li>
+            <li><a target="right" href="font.html#tab_menu">字体相关式样</a></li>
+            <li><a target="right" href="button.html#tab_menu">按钮</a></li>
+            <li><a target="right" href="tab.html#tab_menu">tab</a></li>
+            <li><a target="right" href="input.html#tab_menu">input</a></li>
+            <li><a target="right" href="list.html#tab_menu">列表</a></li>
+            <li><a target="right" href="layout.html#tab_menu">layout</a></li>
         </ul>
     </div>
 
     <section class="demo_frame">
         <ul class="side_left">
-            <li><a target="right" href="color.html">Color</a></li>
-            <li><a target="right" href="header.html">Header</a></li>
-            <li><a target="right" href="icon.html">Icon</a></li>
-            <li><a target="right" href="border.html">Border</a></li>
-            <li><a target="right" href="font.html">Text-align、Font</a></li>
-            <li><a target="right" href="button.html">Button</a></li>
-            <li><a target="right" href="tab.html">Tab</a></li>
-            <li><a target="right" href="list.html">List</a></li>
+            <li><a target="right" href="color.html">颜色</a></li>
+            <li><a target="right" href="header.html">顶部布局</a></li>
+            <li><a target="right" href="icon.html">icon</a></li>
+            <li><a target="right" href="border.html">边框</a></li>
+            <li><a target="right" href="font.html">字体相关式样</a></li>
+            <li><a target="right" href="button.html">按钮</a></li>
+            <li><a target="right" href="tab.html">tab</a></li>
+            <li><a target="right" href="input.html">input</a></li>
+            <li><a target="right" href="list.html">列表</a></li>
+            <li><a target="right" href="layout.html">layout</a></li>
         </ul>
 
         <iframe name="right" src="color.html" frameborder="false" scrolling="auto" class="frame_right" allowtransparency="true"></iframe>
@@ -51,10 +55,10 @@
         $that.addEventListener('click', function () {
             if (isClicked) {
                 $menu.className = 'js_menu demo_app_menu animate_hide';
-                $that.className = 'js_icon icon_arrow_left';
+                $that.className = 'js_icon icon_al';
             } else {
                 $menu.className = 'js_menu demo_app_menu animate_show';
-                $that.className = 'js_icon icon_arrow_right';       
+                $that.className = 'js_icon icon_ar';       
             }
 
             isClicked = !isClicked;
@@ -62,7 +66,7 @@
 
         $list.addEventListener('click', function () {
             $menu.className = 'js_menu demo_app_menu animate_hide';
-            $that.className = 'js_icon icon_arrow_left';
+            $that.className = 'js_icon icon_al';
             isClicked = false;
         }, false);
     </script>
