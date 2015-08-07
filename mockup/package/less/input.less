@@ -105,6 +105,15 @@
         height: 100%;
         .box();
     }
+    input {
+        .input(@height: 20px);
+        width: 200%;
+        padding: 10px 0;
+        position: absolute;
+        left: -50px;
+        top: 0;
+        z-index: 1;
+    }
 }
 .ip_pa {
     ul {
@@ -117,15 +126,8 @@
         }
     }
     input {
-        .input(@height: 20px);
-        width: 200%;
-        padding: 10px 0;
         background: #eee;
         color: #eee;
-        position: absolute;
-        left: -50px;
-        top: 0;
-        z-index: 1;
     }
 }
 .ip_pb {
@@ -146,9 +148,6 @@
         }
     }
     input {
-        .input(@height: 20px);
-        width: 100%;
-        padding: 10px 0;
         background: rgba(0,0,0,0);
         color: rgba(0,0,0,0);
     }
