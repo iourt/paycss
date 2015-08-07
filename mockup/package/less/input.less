@@ -88,17 +88,27 @@
 .dot7.focus { .li-dot-animte(7); }
 .dot8.focus { .li-dot-animte(8); }
 
-.ip_pa {
+
+.ip_pa,
+.ip_pb {
     position: relative;
+    height: 40px;
+    width: 100%;
+    overflow: hidden;
     ul {
         pointer-events: none;
         position: absolute;
         left: 0;
         top: 0;
+        z-index: 2;
         width: 100%;
         height: 100%;
-        background: #eee;
         .box();
+    }
+}
+.ip_pa {
+    ul {
+        background: #eee;
         .box_ac();
         li {
             text-align: center;
@@ -108,23 +118,18 @@
     }
     input {
         .input(@height: 20px);
-        width: 100%;
+        width: 200%;
         padding: 10px 0;
         background: #eee;
         color: #eee;
+        position: absolute;
+        left: -50px;
+        top: 0;
+        z-index: 1;
     }
 }
-
 .ip_pb {
-    position: relative;
     ul {
-        pointer-events: none;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        .box();
         li {
             text-align: center;
             margin-right: 5px;
