@@ -15,46 +15,67 @@
     <dl class="js_select date_list">
         <dt>
             <div>取消</div>
-            <div>有效期</div>
+            <div class="text">有效期</div>
             <div>确定</div>
         </dt>
         <dd>
-            <ul class="js_month">
-                <li>01</li>
-                <li>02</li>
-                <li>03</li>
-                <li>04</li>
-                <li>05</li>
-                <li>06</li>
-                <li>07</li>
-                <li>08</li>
-                <li>09</li>
-                <li>10</li>
-                <li>11</li>
-                <li>12</li>
-            </ul>
-            <ul class="js_year"></ul>
+            <div id="js_month">
+                <ul class="js_month">
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li>04</li>
+                    <li>05</li>
+                    <li>06</li>
+                    <li>07</li>
+                    <li>08</li>
+                    <li>09</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                </ul>
+            </div>
+            <div id="js_year">
+                <ul class="js_year"></ul>
+            </div>
         </dd>
         <dd>
-            <ul class="js_month_d">
-                <li>01</li>
-                <li>02</li>
-                <li>03</li>
-                <li>04</li>
-                <li>05</li>
-                <li>06</li>
-                <li>07</li>
-                <li>08</li>
-                <li>09</li>
-                <li>10</li>
-                <li>11</li>
-                <li>12</li>
-            </ul>
-            <ul class="js_year_d"></ul>
+            <div>
+                <ul class="js_month_d">
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li>04</li>
+                    <li>05</li>
+                    <li>06</li>
+                    <li>07</li>
+                    <li>08</li>
+                    <li>09</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                </ul>
+            </div>
+            <div><ul class="js_year_d"></ul></div>
         </dd>
     </dl>
 
+    
+    <!--
     <script type="text/javascript" src="month.js"></script>
+    <script type="text/javascript" src="iscroll-lite.js"></script>
+    -->
+    <script type="text/javascript" src="zepto.min.js"></script>
+    <script type="text/javascript" src="iscroll-probe.js"></script>
+    <script type="text/javascript" src="month-iscroll.js"></script>
 
 
 </body>
