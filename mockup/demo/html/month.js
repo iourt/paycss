@@ -76,7 +76,6 @@
     })();
 
 
-
     var modifyDate = {
         init: function () {
             var self = this,
@@ -182,7 +181,7 @@
             var self = this;
 
             $select = document.querySelector('.js_date_select');
-            $select.className = "js_date_select date_list animate_show";
+            $select.className = "js_date_select date_pop animate_show";
 
             var mScroll = new dateScroll('.js_date_month', { type: 'month' }),
                 yScroll = new dateScroll('.js_date_year', { type: 'year' });
@@ -194,7 +193,7 @@
                     $current.dataset.month = '';
                     $current.dataset.year = '';
                     $current.innerHTML = '请输入有效期';
-                    $select.className = "js_date_select date_list animate_hide";
+                    $select.className = "js_date_select date_pop animate_hide";
 
                     e.stopPropagation();
                 };
@@ -209,7 +208,7 @@
                     var m = $current.dataset.month || unit.formatDate().month,
                         y = $current.dataset.year || unit.formatDate().year;
 
-                    $select.className = "js_date_select date_list animate_hide";
+                    $select.className = "js_date_select date_pop animate_hide";
 
                     $current.innerHTML = unit.addZero(m) + ' / ' + y;
                     $current.dataset.month = m;
@@ -224,9 +223,10 @@
 
         _hide: function () {
             document.addEventListener('click', function (e) {
-                if ($select) {
-                    $select.className = "js_date_select date_list animate_hide";
-                }
+                alert(1);
+                if (!$select) return;
+
+                $select.className = "js_date_select date_pop animate_hide";
             }, false);
         }
 
